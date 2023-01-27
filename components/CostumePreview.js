@@ -17,11 +17,11 @@ export const CostumePreviewComponent = ({ data, url }) => {
           />
           <div className="absolute inset-0 h-full w-full bg-black opacity-0 duration-300 ease-in-out group-hover:opacity-60"></div>
           <div className="absolute inset-0 h-full w-full text-center ">
-            <div className="relative z-10 inline-block flex h-full flex-col items-center justify-center text-center align-middle text-white opacity-0 duration-100 ease-in-out group-hover:opacity-100">
-              <h2 className="text-lg">
+            <div className="relative z-10 inline-block flex h-full flex-col items-center justify-end invisible pb-2 -bottom-1/4 ...................................................................text-center text-white opacity-0 duration-100 ease-in-out group-hover:opacity-100 group-hover:bottom-0 group-hover:visible">
+              <h2 className="text-lg uppercase">
                 <PrismicText field={title} />
               </h2>
-              <p className="text-sm text-slate-300">
+              <p className="text-sm text-slate-300 uppercase">
                 <PrismicText field={sub_title} />
               </p>
             </div>
