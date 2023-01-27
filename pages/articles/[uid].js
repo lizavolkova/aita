@@ -121,7 +121,6 @@ export async function getStaticPaths() {
   const client = createClient();
 
   const articles = await client.getAllByType("article");
-  console.log(articles)
 
   return {
     paths: articles.map((article) => prismicH.asLink(article)),

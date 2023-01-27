@@ -21,11 +21,6 @@ export const Header = ({
       <div className="grid grid-cols-1 justify-items-center gap-20">
         <nav>
           <ul className="flex flex-wrap justify-center gap-10">
-            <NavItem>
-              <PrismicLink href="/">
-                <PrismicText field={navigation.data.homepageLabel} />
-              </PrismicLink>
-            </NavItem>
             {navigation.data?.links.map((item) => (
               <NavItem key={prismicH.asText(item.label)}>
                 <PrismicLink field={item.link}>

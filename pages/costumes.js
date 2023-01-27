@@ -24,7 +24,6 @@ const Costumes = ({ page, costumes, navigation, settings }) => {
 
                 <ImageGalleryComponent>
                     {costumes.map(costume => {
-                        console.log(costume)
                         return (
                             <CostumePreviewComponent {...costume} />
                         )
