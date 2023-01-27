@@ -9,7 +9,11 @@ import { CostumePreviewComponent } from "../components/CostumePreview";
 import { ImageGalleryComponent } from "../components/ImageGallery";
 import CostumeDetails from "../slices/CostumeDetails";
 
-const Costumes = ({ page, costumes, navigation, settings }) => {
+const Costumes = ({ page, costumes, navigation, settings, tags }) => {
+  const filterImages = () => {
+
+  }
+
   return (
     <Layout
       withHeaderDivider={false}
@@ -21,6 +25,11 @@ const Costumes = ({ page, costumes, navigation, settings }) => {
       </Head>
       <Bounded size="widest">
         <SliceZone slices={page.data.slices} components={components} />
+
+        <div className="flex uppercase text-sm font-bold">
+          <span className="pr-4 cursor-pointer">Show All</span>
+          {tags.map(tag => <span className="pr-4 cursor-pointer" key={tag}>{tag}</span>)}
+        </div>
 
         <ImageGalleryComponent>
           {costumes.map((costume) => {
@@ -42,6 +51,8 @@ export async function getStaticProps({ previewData }) {
   const costumes = await client.getAllByType("costume", {
     orderings: [{ field: "my.costume.year", direction: "desc" }],
   });
+  const allTags = costumes.map(costume => costume.tags).flat();
+  const tags = [...new Set(allTags)];
   const navigation = await client.getSingle("navigation");
   const settings = await client.getSingle("settings");
 
@@ -51,6 +62,7 @@ export async function getStaticProps({ previewData }) {
       costumes,
       navigation,
       settings,
+      tags
     },
   };
 }

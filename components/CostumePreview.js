@@ -4,8 +4,8 @@
 import { PrismicText, PrismicLink } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 
-export const CostumePreviewComponent = ({ data, url }) => {
-  const { title, sub_title, year, featured_image } = data;
+export const CostumePreviewComponent = ({ data, url, tags}) => {
+  const { title, sub_title, year, featured_image  } = data;
 
   return (
     <>
@@ -15,9 +15,9 @@ export const CostumePreviewComponent = ({ data, url }) => {
             field={featured_image}
             className="block h-auto w-full "
           />
-          <div className="absolute inset-0 h-full w-full bg-black opacity-0 duration-300 ease-in-out group-hover:opacity-60"></div>
+          <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-black opacity-0 duration-300 ease-in group-hover:opacity-60"></div>
           <div className="absolute inset-0 h-full w-full text-center ">
-            <div className="relative z-10 inline-block flex h-full flex-col items-center justify-end invisible pb-2 -bottom-1/4 ...................................................................text-center text-white opacity-0 duration-100 ease-in-out group-hover:opacity-100 group-hover:bottom-0 group-hover:visible">
+            <div className="relative z-10 inline-block flex h-full flex-col items-center justify-end invisible pb-2 -bottom-1/4 text-center text-white opacity-0 duration-100 ease-in-out group-hover:opacity-100 group-hover:bottom-0 group-hover:visible">
               <h2 className="text-lg uppercase">
                 <PrismicText field={title} />
               </h2>
