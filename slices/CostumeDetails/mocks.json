@@ -1,0 +1,108 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "name": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading2",
+            "content": {
+              "text": "Divide"
+            }
+          }
+        ]
+      },
+      "sub_title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Nisi aute dolor aute magna adipisicing nostrud cupidatat velit qui ea est et. Cupidatat do elit ex amet elit amet minim est irure laboris sint dolor. Veniam occaecat enim est cupidatat laborum veniam exercitation commodo qui duis commodo consequat duis."
+            }
+          }
+        ]
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Dolor occaecat Lorem laboris non proident incididunt Lorem sunt. Amet ut ut sint quis sint fugiat nulla eu. Magna deserunt cillum irure anim ad laboris proident nisi laboris magna nulla Lorem nisi commodo esse."
+            }
+          }
+        ]
+      },
+      "year": {
+        "__TYPE__": "FieldContent",
+        "type": "Timestamp",
+        "value": "2015-03-15T15:06:37Z"
+      },
+      "materials": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Sit quis quis occaecat veniam non ex eiusmod commodo voluptate velit minim nisi sunt quis duis."
+            }
+          }
+        ]
+      },
+      "patterns": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Sit quis eiusmod occaecat deserunt sint veniam Lorem in non elit aliqua."
+            }
+          }
+        ]
+      },
+      "construction": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Labore qui pariatur tempor velit dolore ad."
+            }
+          }
+        ]
+      },
+      "featuredimage": {
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468",
+          "width": 4000,
+          "height": 6000
+        },
+        "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468",
+        "width": 4000,
+        "height": 6000,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "credits": null,
+        "alt": null,
+        "__TYPE__": "ImageContent",
+        "thumbnails": {}
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

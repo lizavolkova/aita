@@ -1,0 +1,30 @@
+{
+  "id": "settings",
+  "label": "Settings",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "name": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Name",
+          "placeholder": "Name of your blog (e.g. your name)",
+          "allowTargetBlank": false,
+          "single": "heading1"
+        }
+      },
+      "logoImg": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {
+            "width": 1614,
+            "height": 355
+          },
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

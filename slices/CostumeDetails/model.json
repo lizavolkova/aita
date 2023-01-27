@@ -1,0 +1,88 @@
+{
+  "id": "gallery_image",
+  "type": "SharedSlice",
+  "name": "CostumeDetails",
+  "description": "GalleryImage",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "GalleryImage",
+      "primary": {
+        "name": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Name",
+            "placeholder": "Costume Name",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "sub_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Sub Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "Game, years, etc",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "year": {
+          "type": "Timestamp",
+          "config": {
+            "label": "Year",
+            "placeholder": ""
+          }
+        },
+        "materials": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Materials",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "list-item,hyperlink"
+          }
+        },
+        "patterns": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Patterns",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "list-item,hyperlink"
+          }
+        },
+        "construction": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Construction",
+            "placeholder": "How it was made",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "featuredimage": {
+          "type": "Image",
+          "config": {
+            "label": "FeaturedImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}
