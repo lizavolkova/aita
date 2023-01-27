@@ -5,7 +5,6 @@ import { Bounded } from "./Bounded";
 import { Heading } from "./Heading";
 import { HorizontalDivider } from "./HorizontalDivider";
 
-
 export const Footer = ({ settings }) => {
   return (
     <Bounded as="footer">

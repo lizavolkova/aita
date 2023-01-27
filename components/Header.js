@@ -2,8 +2,7 @@ import * as prismicH from "@prismicio/helpers";
 import { PrismicLink, PrismicText } from "@prismicio/react";
 
 import { Bounded } from "./Bounded";
-import { Logo } from './Logo';
-
+import { Logo } from "./Logo";
 
 const NavItem = ({ children }) => {
   return (
@@ -11,11 +10,7 @@ const NavItem = ({ children }) => {
   );
 };
 
-export const Header = ({
-  withLogo = true,
-  navigation,
-  settings,
-}) => {
+export const Header = ({ withLogo = true, navigation, settings }) => {
   return (
     <Bounded as="header">
       <div className="grid grid-cols-1 justify-items-center gap-20">
@@ -30,11 +25,7 @@ export const Header = ({
             ))}
           </ul>
         </nav>
-        {withLogo && (
-          <Logo
-            logoImg={settings.data.logoImg}
-          />
-        )}
+        {withLogo && <Logo logoImg={settings.data.logoImg} />}
       </div>
     </Bounded>
   );

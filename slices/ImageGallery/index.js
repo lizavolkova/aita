@@ -1,5 +1,5 @@
-import React from 'react'
-import { PrismicRichText } from '@prismicio/react'
+import React from "react";
+import { PrismicRichText } from "@prismicio/react";
 
 import { ImageGalleryComponent } from "../../components/ImageGallery";
 
@@ -10,13 +10,12 @@ import { ImageGalleryComponent } from "../../components/ImageGallery";
  */
 const ImageGallery = ({ slice }) => (
   <section>
-      <ImageGalleryComponent
-          images={slice.items}
-          title={slice.primary.title}
-          description={slice.primary.description}
-      />
-
+    <ImageGalleryComponent
+      images={slice.items}
+      title={slice.primary.title}
+      description={slice.primary.description}
+    />
   </section>
-)
+);
 
-export default ImageGallery
+export default ImageGallery;

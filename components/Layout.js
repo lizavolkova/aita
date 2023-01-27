@@ -10,7 +10,7 @@ export const Layout = ({
   children,
 }) => {
   return (
-    <div className="text-slate-700 container mx-auto">
+    <div className="container mx-auto text-slate-700">
       <Header
         withLogo={withLogo}
         withDivider={withHeaderDivider}

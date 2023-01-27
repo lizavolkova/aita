@@ -8,7 +8,7 @@ import { Layout } from "../../components/Layout";
 import { Bounded } from "../../components/Bounded";
 import { Heading } from "../../components/Heading";
 import { HorizontalDivider } from "../../components/HorizontalDivider";
-import {CostumeDetailsComponent} from "../../components/CostumeDetails";
+import { CostumeDetailsComponent } from "../../components/CostumeDetails";
 import React from "react";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
@@ -19,24 +19,22 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 
 const Article = ({ costume, latestCostume, navigation, settings }) => {
   const date = prismicH.asDate(
-      costume.data.publishDate || costume.first_publication_date
+    costume.data.publishDate || costume.first_publication_date
   );
 
   return (
-      <Layout
-          withHeaderDivider={false}
-          navigation={navigation}
-          settings={settings}
-      >
-        <Head>
-          <title>
-
-          </title>
-        </Head>
-        <Bounded size="widest">
-          <CostumeDetailsComponent {...costume.data} />
-          <SliceZone slices={costume.data.slices} components={components} />
-        </Bounded>
+    <Layout
+      withHeaderDivider={false}
+      navigation={navigation}
+      settings={settings}
+    >
+      <Head>
+        <title></title>
+      </Head>
+      <Bounded size="widest">
+        <CostumeDetailsComponent {...costume.data} />
+        <SliceZone slices={costume.data.slices} components={components} />
+      </Bounded>
     </Layout>
   );
 };

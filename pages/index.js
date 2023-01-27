@@ -1,5 +1,5 @@
 import Head from "next/head";
-import {PrismicLink, PrismicText, SliceZone} from "@prismicio/react";
+import { PrismicLink, PrismicText, SliceZone } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import * as prismicH from "@prismicio/helpers";
 
@@ -7,14 +7,13 @@ import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
 import { Bounded } from "../components/Bounded";
 import { Heading } from "../components/Heading";
-import {components} from "../slices";
+import { components } from "../slices";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
   day: "numeric",
   year: "numeric",
 });
-
 
 const Index = ({ page, navigation, settings }) => {
   return (
