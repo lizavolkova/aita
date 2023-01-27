@@ -264,7 +264,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = ImageSlice | QuoteSlice | TextSlice | ContactFormSlice;
+type PageDocumentDataSlicesSlice = ImageSlice | QuoteSlice | TextSlice | ContactFormSlice | SliderSlice | InstagramFeedSlice | AboutMeShortSlice | LatestCostumesSlice;
 /**
  * Page document from Prismic
  *
@@ -311,6 +311,65 @@ interface SettingsDocumentData {
  */
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
 export type AllDocumentTypes = ArticleDocument | CostumeDocument | NavigationDocument | PageDocument | SettingsDocument;
+/**
+ * Primary content in AboutMeShort → Primary
+ *
+ */
+interface AboutMeShortSliceDefaultPrimary {
+    /**
+     * Title field in *AboutMeShort → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: about_me_short.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *AboutMeShort → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: about_me_short.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * Photo field in *AboutMeShort → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_me_short.primary.photo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    photo: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for AboutMeShort Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `AboutMeShort`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type AboutMeShortSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<AboutMeShortSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *AboutMeShort*
+ *
+ */
+type AboutMeShortSliceVariation = AboutMeShortSliceDefault;
+/**
+ * AboutMeShort Shared Slice
+ *
+ * - **API ID**: `about_me_short`
+ * - **Description**: `AboutMeShort`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type AboutMeShortSlice = prismicT.SharedSlice<"about_me_short", AboutMeShortSliceVariation>;
 /**
  * Default variation for ContactForm Slice
  *
@@ -642,6 +701,104 @@ type ImageGallerySliceVariation = ImageGallerySliceDefault;
  */
 export type ImageGallerySlice = prismicT.SharedSlice<"image_gallery", ImageGallerySliceVariation>;
 /**
+ * Primary content in InstagramFeed → Primary
+ *
+ */
+interface InstagramFeedSliceDefaultPrimary {
+    /**
+     * Title field in *InstagramFeed → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: instagram_feed.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Placeholder field in *InstagramFeed → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: instagram_feed.primary.placeholder
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    placeholder: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for InstagramFeed Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `InstagramFeed`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type InstagramFeedSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<InstagramFeedSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *InstagramFeed*
+ *
+ */
+type InstagramFeedSliceVariation = InstagramFeedSliceDefault;
+/**
+ * InstagramFeed Shared Slice
+ *
+ * - **API ID**: `instagram_feed`
+ * - **Description**: `InstagramFeed`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type InstagramFeedSlice = prismicT.SharedSlice<"instagram_feed", InstagramFeedSliceVariation>;
+/**
+ * Primary content in LatestCostumes → Primary
+ *
+ */
+interface LatestCostumesSliceDefaultPrimary {
+    /**
+     * Title field in *LatestCostumes → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: latest_costumes.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *LatestCostumes → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: latest_costumes.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Default variation for LatestCostumes Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `LatestCostumes`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type LatestCostumesSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<LatestCostumesSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *LatestCostumes*
+ *
+ */
+type LatestCostumesSliceVariation = LatestCostumesSliceDefault;
+/**
+ * LatestCostumes Shared Slice
+ *
+ * - **API ID**: `latest_costumes`
+ * - **Description**: `LatestCostumes`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type LatestCostumesSlice = prismicT.SharedSlice<"latest_costumes", LatestCostumesSliceVariation>;
+/**
  * Primary content in Quote → Primary
  *
  */
@@ -691,6 +848,81 @@ type QuoteSliceVariation = QuoteSliceDefault;
  */
 export type QuoteSlice = prismicT.SharedSlice<"quote", QuoteSliceVariation>;
 /**
+ * Primary content in Slider → Primary
+ *
+ */
+interface SliderSliceDefaultPrimary {
+    /**
+     * Title field in *Slider → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: slider.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *Slider → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: slider.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Item in Slider → Items
+ *
+ */
+export interface SliderSliceDefaultItem {
+    /**
+     * Image field in *Slider → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: slider.items[].image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * Description field in *Slider → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: slider.items[].description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Default variation for Slider Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Slider`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SliderSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<SliderSliceDefaultPrimary>, Simplify<SliderSliceDefaultItem>>;
+/**
+ * Slice variation for *Slider*
+ *
+ */
+type SliderSliceVariation = SliderSliceDefault;
+/**
+ * Slider Shared Slice
+ *
+ * - **API ID**: `slider`
+ * - **Description**: `Slider`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SliderSlice = prismicT.SharedSlice<"slider", SliderSliceVariation>;
+/**
  * Primary content in Text → Primary
  *
  */
@@ -734,6 +966,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArticleDocumentData, ArticleDocumentDataSlicesSlice, ArticleDocument, CostumeDocumentData, CostumeDocumentDataSlicesSlice, CostumeDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, ContactFormSliceDefault, ContactFormSliceVariation, ContactFormSlice, GalleryImageSliceDefaultPrimary, GalleryImageSliceDefault, GalleryImageSliceVariation, GalleryImageSlice, HeadingWithTextSliceDefaultPrimary, HeadingWithTextSliceDefault, HeadingWithTextSliceVariation, HeadingWithTextSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceWidePrimary, ImageSliceWide, ImageSliceVariation, ImageSlice, ImageGallerySliceDefaultPrimary, ImageGallerySliceDefaultItem, ImageGallerySliceDefault, ImageGallerySliceVariation, ImageGallerySlice, QuoteSliceDefaultPrimary, QuoteSliceDefault, QuoteSliceVariation, QuoteSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
+        export type { ArticleDocumentData, ArticleDocumentDataSlicesSlice, ArticleDocument, CostumeDocumentData, CostumeDocumentDataSlicesSlice, CostumeDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, AboutMeShortSliceDefaultPrimary, AboutMeShortSliceDefault, AboutMeShortSliceVariation, AboutMeShortSlice, ContactFormSliceDefault, ContactFormSliceVariation, ContactFormSlice, GalleryImageSliceDefaultPrimary, GalleryImageSliceDefault, GalleryImageSliceVariation, GalleryImageSlice, HeadingWithTextSliceDefaultPrimary, HeadingWithTextSliceDefault, HeadingWithTextSliceVariation, HeadingWithTextSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceWidePrimary, ImageSliceWide, ImageSliceVariation, ImageSlice, ImageGallerySliceDefaultPrimary, ImageGallerySliceDefaultItem, ImageGallerySliceDefault, ImageGallerySliceVariation, ImageGallerySlice, InstagramFeedSliceDefaultPrimary, InstagramFeedSliceDefault, InstagramFeedSliceVariation, InstagramFeedSlice, LatestCostumesSliceDefaultPrimary, LatestCostumesSliceDefault, LatestCostumesSliceVariation, LatestCostumesSlice, QuoteSliceDefaultPrimary, QuoteSliceDefault, QuoteSliceVariation, QuoteSlice, SliderSliceDefaultPrimary, SliderSliceDefaultItem, SliderSliceDefault, SliderSliceVariation, SliderSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
     }
 }

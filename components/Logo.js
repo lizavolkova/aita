@@ -7,7 +7,7 @@ export const Logo = ({ logoImg }) => {
     <div className="px-4">
       <div className="grid max-w-lg grid-cols-1 justify-items-center gap-8">
         <PrismicLink href="/" tabIndex="-1">
-          <div className="w-90 h-auto">
+          <div className="w-80 h-auto">
             {prismicH.isFilled.image(logoImg) && (
               <PrismicNextImage field={logoImg} className="h-auto max-w-full" />
             )}

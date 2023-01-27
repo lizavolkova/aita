@@ -37,6 +37,18 @@
             },
             "contact_form": {
               "type": "SharedSlice"
+            },
+            "slider": {
+              "type": "SharedSlice"
+            },
+            "instagram_feed": {
+              "type": "SharedSlice"
+            },
+            "about_me_short": {
+              "type": "SharedSlice"
+            },
+            "latest_costumes": {
+              "type": "SharedSlice"
             }
           }
         }

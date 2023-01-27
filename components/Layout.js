@@ -8,9 +8,10 @@ export const Layout = ({
   withLogo,
   withSignUpForm,
   children,
+    fullWidth
 }) => {
   return (
-    <div className="container mx-auto text-slate-700">
+    <div className={`${fullWidth ? '' : 'container'} text-slate-700 mx-auto`}>
       <Header
         withLogo={withLogo}
         withDivider={withHeaderDivider}

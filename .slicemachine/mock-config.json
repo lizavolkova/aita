@@ -114,6 +114,18 @@
       "default": {
         "primary": {}
       }
-    }
+    },
+    "Slider": {},
+    "InstagramFeed": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "AboutMeShort": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "LatestCostumes": {}
   }
 }

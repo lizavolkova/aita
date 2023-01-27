@@ -9,25 +9,18 @@ import { Bounded } from "../components/Bounded";
 import { Heading } from "../components/Heading";
 import { components } from "../slices";
 
-const dateFormatter = new Intl.DateTimeFormat("en-US", {
-  month: "short",
-  day: "numeric",
-  year: "numeric",
-});
-
 const Index = ({ page, navigation, settings }) => {
   return (
     <Layout
       withHeaderDivider={false}
       navigation={navigation}
       settings={settings}
+      fullWidth={true}
     >
       <Head>
         <title>{prismicH.asText(settings.data.name)}</title>
       </Head>
-      <Bounded size="widest">
         <SliceZone slices={page.data.slices} components={components} />
-      </Bounded>
     </Layout>
   );
 };

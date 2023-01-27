@@ -1,0 +1,139 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Anywhere"
+            }
+          }
+        ]
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Ullamco duis minim in occaecat dolor sit elit veniam voluptate nisi laboris veniam aliqua dolor adipisicing."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "image",
+            {
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
+                "width": 4272,
+                "height": 2848
+              },
+              "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
+              "width": 4272,
+              "height": 2848,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "credits": null,
+              "alt": null,
+              "__TYPE__": "ImageContent",
+              "thumbnails": {}
+            }
+          ],
+          [
+            "description",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Quis exercitation sunt sint duis commodo amet ipsum amet occaecat cupidatat sunt tempor anim Lorem. Magna eu ipsum non occaecat reprehenderit nisi eiusmod anim. Incididunt quis culpa amet aute magna pariatur consectetur elit adipisicing ea anim laborum officia aliqua."
+                  }
+                }
+              ]
+            }
+          ]
+        ]
+      },
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "image",
+            {
+              "url": "https://images.unsplash.com/photo-1657310217158-adc77ea93a7d?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MXwxfHNlYXJjaHwyMnx8ZnJ1aXR8ZW58MHx8fHwxNjc0ODE1NTU5&ixlib=rb-4.0.3&q=80",
+              "origin": {
+                "id": "I9-ttTiyKGo",
+                "url": "https://images.unsplash.com/photo-1657310217158-adc77ea93a7d?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MXwxfHNlYXJjaHwyMnx8ZnJ1aXR8ZW58MHx8fHwxNjc0ODE1NTU5&ixlib=rb-4.0.3&q=80",
+                "width": 5053,
+                "height": 3369
+              },
+              "width": 5053,
+              "height": 3369,
+              "edit": {
+                "background": "transparent",
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                }
+              },
+              "credits": null,
+              "alt": null,
+              "__TYPE__": "ImageContent",
+              "thumbnails": {}
+            }
+          ]
+        ]
+      },
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "image",
+            {
+              "url": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHwyM3x8ZnJ1aXR8ZW58MHx8fHwxNjc0ODE1NTU5&ixlib=rb-4.0.3&q=80",
+              "origin": {
+                "id": "9aOswReDKPo",
+                "url": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHwyM3x8ZnJ1aXR8ZW58MHx8fHwxNjc0ODE1NTU5&ixlib=rb-4.0.3&q=80",
+                "width": 8040,
+                "height": 6024
+              },
+              "width": 8040,
+              "height": 6024,
+              "edit": {
+                "background": "transparent",
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                }
+              },
+              "credits": null,
+              "alt": null,
+              "__TYPE__": "ImageContent",
+              "thumbnails": {}
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

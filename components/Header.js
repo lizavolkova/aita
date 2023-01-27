@@ -13,7 +13,7 @@ const NavItem = ({ children }) => {
 export const Header = ({ withLogo = true, navigation, settings }) => {
   return (
     <Bounded as="header">
-      <div className="grid grid-cols-1 justify-items-center gap-20">
+      <div className="grid grid-cols-1 justify-items-center gap-5">
         <nav>
           <ul className="flex flex-wrap justify-center gap-10">
             {navigation.data?.links.map((item) => (
