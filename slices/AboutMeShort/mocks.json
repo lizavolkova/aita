@@ -3,19 +3,6 @@
     "__TYPE__": "SharedSliceContent",
     "variation": "default",
     "primary": {
-      "title": {
-        "__TYPE__": "StructuredTextContent",
-        "value": [
-          {
-            "type": "heading1",
-            "content": {
-              "text": "About Me",
-              "spans": []
-            },
-            "direction": "ltr"
-          }
-        ]
-      },
       "description": {
         "__TYPE__": "StructuredTextContent",
         "value": [
@@ -49,6 +36,17 @@
         "alt": null,
         "__TYPE__": "ImageContent",
         "thumbnails": {}
+      },
+      "heading": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Veniam non eu nisi labore ut mollit ex officia aute cillum."
+            }
+          }
+        ]
       }
     },
     "items": [

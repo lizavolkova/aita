@@ -328,15 +328,15 @@ export type AllDocumentTypes = ArticleDocument | CostumeDocument | NavigationDoc
  */
 interface AboutMeShortSliceDefaultPrimary {
     /**
-     * Title field in *AboutMeShort → Primary*
+     * Heading field in *AboutMeShort → Primary*
      *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: about_me_short.primary.title
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_me_short.primary.heading
      * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    title: prismicT.TitleField;
+    heading: prismicT.RichTextField;
     /**
      * Description field in *AboutMeShort → Primary*
      *

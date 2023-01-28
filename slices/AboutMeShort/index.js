@@ -12,12 +12,15 @@ const AboutMeShort = ({ slice }) => (
 
   <HomeSection title={slice.primary.title}>
       <div className="grid grid-cols-3 gap-4">
-          <div className="...">
+          <div className="flex justify-end">
               <PrismicNextImage
                   field={slice.primary.photo}
-                  className="block h-auto w-full rounded-full "
+                  className="block h-auto w-56 rounded-full "
               /></div>
-          <div className="col-span-2 ..."><PrismicRichText field={slice.primary.description}/></div>
+          <div className="col-span-2 flex flex-col justify-center">
+              <h3 className="text-2xl font-bold"><PrismicRichText field={slice.primary.heading} /></h3>
+              <PrismicRichText field={slice.primary.description}/>
+          </div>
       </div>
   </HomeSection>
 )

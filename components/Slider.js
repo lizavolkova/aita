@@ -1,7 +1,7 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { PrismicNextImage } from "@prismicio/next";
-import { Pagination, Navigation, EffectFade } from "swiper";
+import { Pagination, Navigation, EffectFade, Autoplay } from "swiper";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -17,8 +17,11 @@ export const SliderComponent = ({items}) => {
             navigation={true}
             loop={true}
             slidesPerView={1}
-            effect={"fade"}
-            modules={[EffectFade, Navigation, Pagination]}
+            autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+            }}
+            modules={[EffectFade, Navigation, Pagination, Autoplay]}
         >
             {items.map( (item,i) => {
                 return (
