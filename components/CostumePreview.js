@@ -6,7 +6,6 @@ import { PrismicNextImage } from "@prismicio/next";
 
 export const CostumePreviewComponent = ({ data, url, tags}) => {
   const { title, sub_title, year, featured_image  } = data;
-
   return (
     <>
       <PrismicLink href={url}>
