@@ -49,10 +49,11 @@ export async function getStaticProps({ previewData }) {
   const page = await client.getByUID("page", "costumes");
 
   const costumes = await client.getAllByType("costume", {
-    orderings: [{ field: "my.costume.year", direction: "desc" }],
+    orderings: [{ field: "my.costume.year", direction: "desc" }]
   });
   const allTags = costumes.map(costume => costume.tags).flat();
   const tags = [...new Set(allTags)];
+
   const navigation = await client.getSingle("navigation");
   const settings = await client.getSingle("settings");
 

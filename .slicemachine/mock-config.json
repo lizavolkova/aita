@@ -115,7 +115,11 @@
         "primary": {}
       }
     },
-    "Slider": {},
+    "Slider": {
+      "default": {
+        "items": {}
+      }
+    },
     "InstagramFeed": {
       "default": {
         "primary": {}
@@ -126,6 +130,10 @@
         "primary": {}
       }
     },
-    "LatestCostumes": {}
+    "LatestCostumes": {
+      "default": {
+        "items": {}
+      }
+    }
   }
 }

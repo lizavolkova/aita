@@ -9,7 +9,7 @@
           {
             "type": "heading1",
             "content": {
-              "text": "Heading"
+              "text": "Light"
             }
           }
         ]
@@ -20,7 +20,7 @@
           {
             "type": "paragraph",
             "content": {
-              "text": "Et dolore mollit culpa dolor ex consequat aute irure cillum deserunt. Culpa dolor aliqua id. Consectetur ipsum dolor reprehenderit ut ex deserunt ea velit ut."
+              "text": "Elit ad laborum et culpa duis tempor reprehenderit."
             }
           }
         ]
@@ -29,7 +29,18 @@
     "items": [
       {
         "__TYPE__": "GroupItemContent",
-        "value": []
+        "value": [
+          [
+            "costume",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            }
+          ]
+        ]
       }
     ]
   }

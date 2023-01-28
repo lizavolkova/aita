@@ -11,8 +11,6 @@ import * as prismicH from "@prismicio/helpers";
  * @param { GalleryImageProps }
  */
 const CostumeDetails = ({ slice }) => {
-  console.log(slice.variation);
-
   return (
     <section>
       <CostumeDetailsComponent

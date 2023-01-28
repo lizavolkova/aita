@@ -10,6 +10,7 @@ import { Heading } from "../components/Heading";
 import { components } from "../slices";
 
 const Index = ({ page, navigation, settings }) => {
+
   return (
     <Layout
       withHeaderDivider={false}
@@ -30,7 +31,10 @@ export default Index;
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
 
-  const page = await client.getByUID("page", "home");
+  const page = await client.getByUID("page", "home", {
+    fetchLinks: ['costume.title', 'costume.sub_title', 'costume.preview_image']
+  });
+
   const navigation = await client.getSingle("navigation");
   const settings = await client.getSingle("settings");
 

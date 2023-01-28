@@ -74,6 +74,17 @@
           "single": "list-item,hyperlink,paragraph"
         }
       },
+      "preview_image": {
+        "type": "Image",
+        "config": {
+          "label": "Preview Image",
+          "constraint": {
+            "width": 960,
+            "height": 636
+          },
+          "thumbnails": []
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
