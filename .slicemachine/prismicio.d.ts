@@ -148,6 +148,17 @@ interface CostumeDocumentData {
      */
     patterns: prismicT.RichTextField;
     /**
+     * Resources field in *Costume*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: costume.resources
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    resources: prismicT.RichTextField;
+    /**
      * Preview Image field in *Costume*
      *
      * - **Field Type**: Image
@@ -687,6 +698,16 @@ export interface ImageGallerySliceDefaultItem {
      *
      */
     image: prismicT.ImageField<never>;
+    /**
+     * Caption field in *ImageGallery → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: image_gallery.items[].caption
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    caption: prismicT.RichTextField;
 }
 /**
  * Default variation for ImageGallery Slice

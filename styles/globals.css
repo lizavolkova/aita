@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    h1 {
+        @apply text-2xl;
+    }
+    h2 {
+        @apply text-4xl;
+        @apply uppercase;
+        @apply leading-normal;
+        @apply font-serif;
+    }
+    h3 {
+        @apply text-3xl;
+        @apply uppercase;
+        @apply text-slate-500;
+        @apply font-serif;
+    }
+
+    h4 {
+        @apply text-2xl;
+        @apply uppercase;
+    }
+
+    h6 {
+        @apply font-bold;
+        @apply uppercase;
+        @apply font-serif;
+    }
+    .sub-title {
+        @apply uppercase;
+        @apply text-slate-400;
+    }
+
+    p {
+      @apply font-sans;
+    }
+}

@@ -100,7 +100,11 @@
         "items": {}
       }
     },
-    "ImageGallery": {},
+    "ImageGallery": {
+      "default": {
+        "items": {}
+      }
+    },
     "CostumeDetails": {
       "default": {
         "primary": {},

@@ -10,10 +10,6 @@ import { ImageGalleryComponent } from "../components/ImageGallery";
 import CostumeDetails from "../slices/CostumeDetails";
 
 const Costumes = ({ page, costumes, navigation, settings, tags }) => {
-  const filterImages = () => {
-
-  }
-
   return (
     <Layout
       withHeaderDivider={false}
@@ -24,7 +20,7 @@ const Costumes = ({ page, costumes, navigation, settings, tags }) => {
         <title>{prismicH.asText(settings.data.name)}</title>
       </Head>
       <Bounded size="widest">
-        <SliceZone slices={page.data.slices} components={components} />
+        {!page.data.slices && <SliceZone slices={page.data.slices} components={components} />}
 
         <div className="flex uppercase text-sm font-bold">
           <span className="pr-4 cursor-pointer">Show All</span>

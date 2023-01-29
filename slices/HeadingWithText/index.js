@@ -6,21 +6,13 @@ import { PrismicRichText } from "@prismicio/react";
  * @typedef {import("@prismicio/react").SliceComponentProps<HeadingWithTextSlice>} HeadingWithTextProps
  * @param { HeadingWithTextProps }
  */
-const HeadingWithText = ({ slice }) => (
-  <section>
-    <span className="title">
-      {slice.primary.title ? (
-        <PrismicRichText field={slice.primary.title} />
-      ) : (
-        <h2>Template slice, update me!</h2>
-      )}
-    </span>
-    {slice.primary.description ? (
-      <PrismicRichText field={slice.primary.description} />
-    ) : (
-      <p>start by editing this slice from inside Slice Machine!</p>
-    )}
-  </section>
-);
+const HeadingWithText = ({ slice }) => {
+    return (
+        <section className="mb-10">
+           <PrismicRichText field={slice.primary.title} />
+           <PrismicRichText field={slice.primary.description} />
+        </section>
+    )
+};
 
 export default HeadingWithText;

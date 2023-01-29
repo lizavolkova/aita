@@ -11,7 +11,7 @@ export const Layout = ({
     fullWidth
 }) => {
   return (
-    <div className={`${fullWidth ? '' : 'container'} text-slate-700 mx-auto`}>
+    <div className={`${fullWidth ? '' : 'max-w-[1300px]'} text-slate-700 mx-auto`}>
       <Header
         withLogo={withLogo}
         withDivider={withHeaderDivider}

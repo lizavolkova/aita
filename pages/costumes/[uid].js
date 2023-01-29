@@ -33,7 +33,6 @@ const Article = ({ costume, latestCostume, navigation, settings }) => {
       </Head>
       <Bounded size="widest">
         <CostumeDetailsComponent {...costume.data} />
-        <SliceZone slices={costume.data.slices} components={components} />
       </Bounded>
     </Layout>
   );
