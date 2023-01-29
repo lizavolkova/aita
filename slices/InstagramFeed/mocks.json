@@ -9,13 +9,12 @@
           {
             "type": "heading1",
             "content": {
-              "text": "Evening"
+              "text": "Victory"
             }
           }
         ]
       },
       "placeholder": {
-        "__TYPE__": "ImageContent",
         "origin": {
           "id": "main",
           "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468",
@@ -33,6 +32,9 @@
           },
           "background": "transparent"
         },
+        "credits": null,
+        "alt": null,
+        "__TYPE__": "ImageContent",
         "thumbnails": {}
       }
     },

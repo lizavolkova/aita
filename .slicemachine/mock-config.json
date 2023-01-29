@@ -136,7 +136,8 @@
     },
     "LatestCostumes": {
       "default": {
-        "items": {}
+        "items": {},
+        "primary": {}
       }
     }
   }
