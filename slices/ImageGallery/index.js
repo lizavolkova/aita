@@ -21,6 +21,9 @@ const ImageGallery = ({ slice }) => {
                       <PrismicNextImage
                           field={item.image}
                           className="block h-auto w-full p-2"
+                          imgixParams={{
+                              mark: 'https://assets.imgix.net/presskit/imgix-presskit.pdf?w=160&fm=png&page=4'
+                          }}
                       />
                   )
               })}

@@ -1,7 +1,3 @@
-// https://maribel.qodeinteractive.com/portfolio-item/design-news-weekly/
-
-// 2 column layout: https://azalea.qodeinteractive.com/portfolio-item/smart-style-2/
-
 import {PrismicText, SliceZone} from "@prismicio/react";
 import {PrismicNextImage} from "@prismicio/next";
 import {ImageGalleryComponent} from "./ImageGallery";

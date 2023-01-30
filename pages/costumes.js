@@ -7,9 +7,25 @@ import { components } from "../slices";
 import { SliceZone } from "@prismicio/react";
 import { CostumePreviewComponent } from "../components/CostumePreview";
 import { ImageGalleryComponent } from "../components/ImageGallery";
-import CostumeDetails from "../slices/CostumeDetails";
+import React, { useState } from 'react';
 
-const Costumes = ({ page, costumes, navigation, settings, tags }) => {
+function Costumes({ page, costumes, navigation, settings, tags }) {
+  const [selectedTags, setSelectedTags] = useState(tags);
+  const [selectedCostumes, setSelectedCostumes] = useState(costumes);
+  const [filtered, setFiltered] = useState(false);
+
+  const onTagClick = (tag) => {
+    setSelectedTags(tag)
+    setSelectedCostumes(costumes.filter(costume => costume.tags.includes(tag)));
+    setFiltered(true)
+  }
+
+  const showAll = () => {
+    setSelectedTags(tags);
+    setSelectedCostumes(costumes);
+    setFiltered(false)
+  }
+
   return (
     <Layout
       withHeaderDivider={false}
@@ -19,20 +35,20 @@ const Costumes = ({ page, costumes, navigation, settings, tags }) => {
       <Head>
         <title>{prismicH.asText(settings.data.name)}</title>
       </Head>
-      <Bounded size="widest">
+      <div >
         {!page.data.slices && <SliceZone slices={page.data.slices} components={components} />}
 
-        <div className="flex uppercase text-sm font-bold">
-          <span className="pr-4 cursor-pointer">Show All</span>
-          {tags.map(tag => <span className="pr-4 cursor-pointer" key={tag}>{tag}</span>)}
+        <div className="flex uppercase text-sm font-bold pl-4">
+          <span className={`${filtered ? 'text-black' : 'text-main-color'} pr-4 cursor-pointer`} onClick={showAll}>Show All</span>
+          {tags.map(tag => <span className={`${selectedTags.includes(tag) && filtered ? 'text-main-color' : 'text-black'} pr-4 cursor-pointer`} onClick={() => onTagClick(tag)} key={tag}>{tag}</span>)}
         </div>
 
         <ImageGalleryComponent>
-          {costumes.map((costume) => {
+          {selectedCostumes.map((costume) => {
             return <CostumePreviewComponent {...costume} key={costume.id} />;
           })}
         </ImageGalleryComponent>
-      </Bounded>
+      </div>
     </Layout>
   );
 };

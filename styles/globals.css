@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+    body {
+        overflow-y: scroll;
+    }
     h1 {
         @apply text-2xl;
     }

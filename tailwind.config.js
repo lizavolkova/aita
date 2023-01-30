@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   content: ["./pages/**/*.js", "./components/**/*.js", "./slices/**/*.js"],
   theme: {
@@ -6,7 +8,15 @@ module.exports = {
       serif:
         '"Libre Baskerville", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
     },
-    extend: {},
+    extend: {
+      colors: {
+        'main-color': colors.pink['400']
+      },
+    },
   },
   plugins: [require("@tailwindcss/aspect-ratio")],
+  // purge: {
+  //   enabled: true,
+  //   content: ["./src/**/*.html", "./src/**/*.html", "./src/**/*.jsx", "./src/**/*.js"],
+  // }
 };
