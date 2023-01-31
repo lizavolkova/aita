@@ -341,13 +341,13 @@ interface AboutMeShortSliceDefaultPrimary {
     /**
      * Heading field in *AboutMeShort → Primary*
      *
-     * - **Field Type**: Rich Text
+     * - **Field Type**: Title
      * - **Placeholder**: *None*
      * - **API ID Path**: about_me_short.primary.heading
      * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    heading: prismicT.RichTextField;
+    heading: prismicT.TitleField;
     /**
      * Description field in *AboutMeShort → Primary*
      *
@@ -944,6 +944,38 @@ interface SliderSliceDefaultPrimary {
      *
      */
     auto_play: prismicT.BooleanField;
+    /**
+     * Effect field in *Slider → Primary*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: slider.primary.effect
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    effect: prismicT.SelectField<"None" | "fade">;
+    /**
+     * ShowHomeText field in *Slider → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: slider.primary.showhometext
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    showhometext: prismicT.BooleanField;
+    /**
+     * Dim Slides field in *Slider → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: slider.primary.dim_slides
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    dim_slides: prismicT.BooleanField;
 }
 /**
  * Item in Slider → Items

@@ -7,7 +7,7 @@ const Text = ({ slice }) => {
   return (
     <Bounded as="section">
       {prismicH.isFilled.richText(slice.primary.text) && (
-        <div className="font-sans leading-relaxed text-pink-300">
+        <div className="font-sans leading-relaxed">
           <PrismicRichText field={slice.primary.text} />
         </div>
       )}

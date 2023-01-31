@@ -46,6 +46,35 @@
             "placeholder_true": "true",
             "placeholder_false": "false"
           }
+        },
+        "effect": {
+          "type": "Select",
+          "config": {
+            "label": "Effect",
+            "placeholder": "",
+            "options": [
+              "None",
+              "fade"
+            ]
+          }
+        },
+        "showhometext": {
+          "type": "Boolean",
+          "config": {
+            "label": "ShowHomeText",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "dim_slides": {
+          "type": "Boolean",
+          "config": {
+            "label": "Dim Slides",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
         }
       },
       "items": {

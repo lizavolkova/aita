@@ -16,10 +16,10 @@
         @apply font-serif;
     }
     h3 {
-        @apply text-3xl;
+        @apply text-4xl;
         @apply uppercase;
-        @apply text-slate-500;
         @apply font-serif;
+        @apply font-bold;
     }
 
     h4 {

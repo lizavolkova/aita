@@ -11,9 +11,9 @@ export const PreviewCard = ({ costume }) => {
                     field={preview_image}
                     className="block h-auto w-full"
                 />
-                <h4 className="text-center">
+                <h6 className="text-center">
                     <PrismicText field={title} />
-                </h4>
+                </h6>
                 <p className="text-sm text-slate-400 uppercase text-center">
                     <PrismicText field={sub_title} />
                 </p>

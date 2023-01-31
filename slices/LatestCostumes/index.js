@@ -9,8 +9,8 @@ import { PreviewCard } from "../../components/PreviewCard";
  */
 const LatestCostumes = ({ slice }) => {
   return (
-      <HomeSection title={slice.primary.title}>
-        <div className="grid  gap-4 grid-cols-1 md:grid-cols-3">
+      <HomeSection title={slice.primary.title} bgColor="bg-gray-100" fullWidth={true}>
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-3 container mx-auto">
           {slice.items.map(item => {
             return <PreviewCard costume={item.costume} key={item.id} />
           })}

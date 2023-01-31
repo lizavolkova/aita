@@ -8,6 +8,7 @@ import { SliceZone } from "@prismicio/react";
 import { CostumePreviewComponent } from "../components/CostumePreview";
 import { ImageGalleryComponent } from "../components/ImageGallery";
 import React, { useState } from 'react';
+import { PrismicRichText } from "@prismicio/react";
 
 function Costumes({ page, costumes, navigation, settings, tags }) {
   const [selectedTags, setSelectedTags] = useState(tags);
@@ -36,8 +37,11 @@ function Costumes({ page, costumes, navigation, settings, tags }) {
         <title>{prismicH.asText(settings.data.name)}</title>
       </Head>
       <div >
-        {!page.data.slices && <SliceZone slices={page.data.slices} components={components} />}
 
+        <div className="text-center pb-10">
+          <PrismicRichText field={page.data.title}/>
+          {page.data.slices && <SliceZone slices={page.data.slices} components={components} />}
+        </div>
         <div className="flex uppercase text-xs font-bold pl-4 justify-center">
           <span className={`${filtered ? 'text-black' : 'text-main-color'} pr-4 cursor-pointer`} onClick={showAll}>Show All</span>
           {tags.map(tag => <span className={`${selectedTags.includes(tag) && filtered ? 'text-main-color' : 'text-black'} pr-4 cursor-pointer`} onClick={() => onTagClick(tag)} key={tag}>{tag}</span>)}

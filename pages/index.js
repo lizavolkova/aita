@@ -1,12 +1,9 @@
 import Head from "next/head";
-import { PrismicLink, PrismicText, SliceZone } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
+import { SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
-import { Bounded } from "../components/Bounded";
-import { Heading } from "../components/Heading";
 import { components } from "../slices";
 
 const Index = ({ page, navigation, settings }) => {
@@ -21,7 +18,10 @@ const Index = ({ page, navigation, settings }) => {
       <Head>
         <title>{prismicH.asText(settings.data.name)}</title>
       </Head>
+      <section>
         <SliceZone slices={page.data.slices} components={components} />
+      </section>
+
     </Layout>
   );
 };

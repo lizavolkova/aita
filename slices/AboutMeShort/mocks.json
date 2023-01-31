@@ -41,9 +41,9 @@
         "__TYPE__": "StructuredTextContent",
         "value": [
           {
-            "type": "paragraph",
+            "type": "heading1",
             "content": {
-              "text": "Veniam non eu nisi labore ut mollit ex officia aute cillum."
+              "text": "Below"
             }
           }
         ]
