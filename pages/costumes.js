@@ -7,6 +7,9 @@ import { components } from "../slices";
 import { SliceZone } from "@prismicio/react";
 import { CostumePreviewComponent } from "../components/CostumePreview";
 import { ImageGalleryComponent } from "../components/ImageGallery";
+import { ImageGalleryAnimated } from "../components/ImageGalleryAnimated";
+import { XBlock } from "react-xmasonry";
+
 import React, { useState } from 'react';
 import { PrismicRichText } from "@prismicio/react";
 
@@ -47,11 +50,16 @@ function Costumes({ page, costumes, navigation, settings, tags }) {
           {tags.map(tag => <span className={`${selectedTags.includes(tag) && filtered ? 'text-main-color' : 'text-black'} pr-4 cursor-pointer`} onClick={() => onTagClick(tag)} key={tag}>{tag}</span>)}
         </div>
 
-        <ImageGalleryComponent>
+        <ImageGalleryAnimated>
           {selectedCostumes.map((costume) => {
-            return <CostumePreviewComponent {...costume} key={costume.id} />;
+            return (
+                <XBlock key={costume.id} width={1}>
+                    <CostumePreviewComponent {...costume} key={costume.id} />
+                </XBlock>
+            )
           })}
-        </ImageGalleryComponent>
+        </ImageGalleryAnimated>
+
       </div>
     </Layout>
   );
