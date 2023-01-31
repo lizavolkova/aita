@@ -24,12 +24,7 @@ export const CostumeDetailsComponent = ({
       <div className="mb-20">
 
           <div className="grid grid-cols-12">
-
-            <section className="col-span-12 lg:col-span-8">
-              <SliceZone slices={mainImageGallerySlice} components={components} />
-            </section>
-
-            <section className="col-span-12 lg:col-span-4 lg:pl-5">
+            <section className="col-span-12 lg:col-span-12 pr-5">
               <h2>
                 <PrismicText field={title} />
               </h2>
@@ -41,16 +36,24 @@ export const CostumeDetailsComponent = ({
                 <div className="flex-grow border-t border-gray-400"></div>
               </div>
 
-              <p className="pb-5 lg:pb-10">
+              <p className="pb-5">
                 <PrismicText field={description} />
               </p>
+            </section>
 
-              <div className="col-span-2">
+
+            <section className="col-span-12 lg:col-span-12">
+              <SliceZone slices={mainImageGallerySlice} components={components} />
+            </section>
+
+            <section className="col-span-12 lg:col-span-12 bg-gray-100 p-6 my-6">
+              <div className="col-span-1">
                 <CostumeSubDetails materials={materials} patterns={patterns} year={year}/>
               </div>
             </section>
 
-            <section className="col-span-12 lg:col-span-8">
+
+            <section className="col-span-12 lg:col-span-12">
               <SliceZone slices={otherSlices} components={components} />
             </section>
 
@@ -72,11 +75,8 @@ export const CostumeDetailsComponent = ({
 
       <p>
 
-        {/*<PrismicNextImage*/}
-        {/*    field={featured_image}*/}
-        {/*    className="block h-auto w-full"*/}
-        {/*/>*/}
       </p>
     </div>
   );
 };
+

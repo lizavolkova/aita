@@ -32,6 +32,7 @@
         @apply uppercase;
         @apply font-serif;
     }
+
     .sub-title {
         @apply uppercase;
         @apply text-slate-400;

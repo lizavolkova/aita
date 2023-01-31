@@ -185,7 +185,7 @@ interface CostumeDocumentData {
  * Slice for *Costume → Slice Zone*
  *
  */
-type CostumeDocumentDataSlicesSlice = HeadingWithTextSlice | ImageGallerySlice;
+type CostumeDocumentDataSlicesSlice = HeadingWithTextSlice | ImageGallerySlice | SliderSlice;
 /**
  * Costume document from Prismic
  *
@@ -901,25 +901,49 @@ export type QuoteSlice = prismicT.SharedSlice<"quote", QuoteSliceVariation>;
  */
 interface SliderSliceDefaultPrimary {
     /**
-     * Title field in *Slider → Primary*
+     * Show Pagination field in *Slider → Primary*
      *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: slider.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: slider.primary.show_pagination
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
      *
      */
-    title: prismicT.TitleField;
+    show_pagination: prismicT.BooleanField;
     /**
-     * Description field in *Slider → Primary*
+     * Show Navigation Arrows field in *Slider → Primary*
      *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: A nice description of your feature
-     * - **API ID Path**: slider.primary.description
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: slider.primary.show_navigation_arrows
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
      *
      */
-    description: prismicT.RichTextField;
+    show_navigation_arrows: prismicT.BooleanField;
+    /**
+     * Show Caption field in *Slider → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: slider.primary.show_caption
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    show_caption: prismicT.BooleanField;
+    /**
+     * Auto Play field in *Slider → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: slider.primary.auto_play
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    auto_play: prismicT.BooleanField;
 }
 /**
  * Item in Slider → Items
@@ -946,16 +970,6 @@ export interface SliderSliceDefaultItem {
      *
      */
     description: prismicT.RichTextField;
-    /**
-     * test field in *Slider → Items*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: slider.items[].test
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    test: prismicT.RelationField<"costume">;
 }
 /**
  * Default variation for Slider Slice
@@ -967,10 +981,115 @@ export interface SliderSliceDefaultItem {
  */
 export type SliderSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<SliderSliceDefaultPrimary>, Simplify<SliderSliceDefaultItem>>;
 /**
+ * Primary content in Slider → Primary
+ *
+ */
+interface SliderSliceWithDescriptionPrimary {
+    /**
+     * Title field in *Slider → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: slider.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *Slider → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: slider.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * Show Pagination field in *Slider → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: slider.primary.show_pagination
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    show_pagination: prismicT.BooleanField;
+    /**
+     * Show Navigation Arrows field in *Slider → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: slider.primary.show_navigation_arrows
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    show_navigation_arrows: prismicT.BooleanField;
+    /**
+     * Show Caption field in *Slider → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: slider.primary.show_caption
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    show_caption: prismicT.BooleanField;
+    /**
+     * Auto Play field in *Slider → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: slider.primary.auto_play
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    auto_play: prismicT.BooleanField;
+}
+/**
+ * Item in Slider → Items
+ *
+ */
+export interface SliderSliceWithDescriptionItem {
+    /**
+     * Image field in *Slider → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: slider.items[].image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * Description field in *Slider → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: slider.items[].description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * With description variation for Slider Slice
+ *
+ * - **API ID**: `withDescription`
+ * - **Description**: `Slider`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SliderSliceWithDescription = prismicT.SharedSliceVariation<"withDescription", Simplify<SliderSliceWithDescriptionPrimary>, Simplify<SliderSliceWithDescriptionItem>>;
+/**
  * Slice variation for *Slider*
  *
  */
-type SliderSliceVariation = SliderSliceDefault;
+type SliderSliceVariation = SliderSliceDefault | SliderSliceWithDescription;
 /**
  * Slider Shared Slice
  *
@@ -1024,6 +1143,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArticleDocumentData, ArticleDocumentDataSlicesSlice, ArticleDocument, CostumeDocumentData, CostumeDocumentDataSlicesSlice, CostumeDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, AboutMeShortSliceDefaultPrimary, AboutMeShortSliceDefault, AboutMeShortSliceVariation, AboutMeShortSlice, ContactFormSliceDefault, ContactFormSliceVariation, ContactFormSlice, GalleryImageSliceDefaultPrimary, GalleryImageSliceDefault, GalleryImageSliceVariation, GalleryImageSlice, HeadingWithTextSliceDefaultPrimary, HeadingWithTextSliceDefault, HeadingWithTextSliceVariation, HeadingWithTextSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceWidePrimary, ImageSliceWide, ImageSliceVariation, ImageSlice, ImageGallerySliceDefaultPrimary, ImageGallerySliceDefaultItem, ImageGallerySliceDefault, ImageGallerySliceVariation, ImageGallerySlice, InstagramFeedSliceDefaultPrimary, InstagramFeedSliceDefault, InstagramFeedSliceVariation, InstagramFeedSlice, LatestCostumesSliceDefaultPrimary, LatestCostumesSliceDefaultItem, LatestCostumesSliceDefault, LatestCostumesSliceVariation, LatestCostumesSlice, QuoteSliceDefaultPrimary, QuoteSliceDefault, QuoteSliceVariation, QuoteSlice, SliderSliceDefaultPrimary, SliderSliceDefaultItem, SliderSliceDefault, SliderSliceVariation, SliderSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
+        export type { ArticleDocumentData, ArticleDocumentDataSlicesSlice, ArticleDocument, CostumeDocumentData, CostumeDocumentDataSlicesSlice, CostumeDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, AboutMeShortSliceDefaultPrimary, AboutMeShortSliceDefault, AboutMeShortSliceVariation, AboutMeShortSlice, ContactFormSliceDefault, ContactFormSliceVariation, ContactFormSlice, GalleryImageSliceDefaultPrimary, GalleryImageSliceDefault, GalleryImageSliceVariation, GalleryImageSlice, HeadingWithTextSliceDefaultPrimary, HeadingWithTextSliceDefault, HeadingWithTextSliceVariation, HeadingWithTextSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceWidePrimary, ImageSliceWide, ImageSliceVariation, ImageSlice, ImageGallerySliceDefaultPrimary, ImageGallerySliceDefaultItem, ImageGallerySliceDefault, ImageGallerySliceVariation, ImageGallerySlice, InstagramFeedSliceDefaultPrimary, InstagramFeedSliceDefault, InstagramFeedSliceVariation, InstagramFeedSlice, LatestCostumesSliceDefaultPrimary, LatestCostumesSliceDefaultItem, LatestCostumesSliceDefault, LatestCostumesSliceVariation, LatestCostumesSlice, QuoteSliceDefaultPrimary, QuoteSliceDefault, QuoteSliceVariation, QuoteSlice, SliderSliceDefaultPrimary, SliderSliceDefaultItem, SliderSliceDefault, SliderSliceWithDescriptionPrimary, SliderSliceWithDescriptionItem, SliderSliceWithDescription, SliderSliceVariation, SliderSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
     }
 }

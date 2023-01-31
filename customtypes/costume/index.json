@@ -104,6 +104,9 @@
             },
             "image_gallery": {
               "type": "SharedSlice"
+            },
+            "slider": {
+              "type": "SharedSlice"
             }
           }
         }

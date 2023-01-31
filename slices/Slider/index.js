@@ -1,5 +1,5 @@
 import React from 'react'
-import { PrismicRichText } from '@prismicio/react'
+import {PrismicRichText, PrismicText} from '@prismicio/react'
 import { SliderComponent } from "../../components/Slider";
 
 /**
@@ -8,10 +8,25 @@ import { SliderComponent } from "../../components/Slider";
  * @param { SliderProps }
  */
 const Slider = ({ slice }) => {
-
+    console.log(slice)
     return (
         <section >
-            <SliderComponent {...slice}/>
+            {
+                (slice.variation === 'withDescription')
+                    ?
+                    <div className="grid grid-cols-1 md:grid-cols-2">
+                        <div className="col-span-1">
+                            <SliderComponent {...slice}/>
+                        </div>
+                        <div className="col-span-1 py-5 px-0 md:px-5 ">
+                            <PrismicRichText field={slice.primary.title} />
+                            <PrismicRichText field={slice.primary.description} />
+                        </div>
+
+                    </div>
+                    :  <SliderComponent {...slice}/>
+            }
+
         </section>
     )
 }

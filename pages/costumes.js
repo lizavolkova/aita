@@ -38,7 +38,7 @@ function Costumes({ page, costumes, navigation, settings, tags }) {
       <div >
         {!page.data.slices && <SliceZone slices={page.data.slices} components={components} />}
 
-        <div className="flex uppercase text-sm font-bold pl-4">
+        <div className="flex uppercase text-xs font-bold pl-4 justify-center">
           <span className={`${filtered ? 'text-black' : 'text-main-color'} pr-4 cursor-pointer`} onClick={showAll}>Show All</span>
           {tags.map(tag => <span className={`${selectedTags.includes(tag) && filtered ? 'text-main-color' : 'text-black'} pr-4 cursor-pointer`} onClick={() => onTagClick(tag)} key={tag}>{tag}</span>)}
         </div>

@@ -22,7 +22,11 @@ const ImageGallery = ({ slice }) => {
                           field={item.image}
                           className="block h-auto w-full p-2"
                           imgixParams={{
-                              mark: 'https://assets.imgix.net/presskit/imgix-presskit.pdf?w=160&fm=png&page=4'
+                              mark: 'https://images.prismic.io/aita/2050ff47-d217-4328-9848-ad1bb87e0e37_adventures-in-time-logo.png?w=500&auto=compress,format',
+                              height: 1200,
+                              markScale: 25,
+                              markAlpha: 50,
+                              markAlign: 'left'
                           }}
                       />
                   )

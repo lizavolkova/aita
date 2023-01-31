@@ -3,27 +3,21 @@
     "__TYPE__": "SharedSliceContent",
     "variation": "default",
     "primary": {
-      "title": {
-        "__TYPE__": "StructuredTextContent",
-        "value": [
-          {
-            "type": "heading1",
-            "content": {
-              "text": "Recognize"
-            }
-          }
-        ]
+      "show_pagination": {
+        "__TYPE__": "BooleanContent",
+        "value": false
       },
-      "description": {
-        "__TYPE__": "StructuredTextContent",
-        "value": [
-          {
-            "type": "paragraph",
-            "content": {
-              "text": "Qui consequat dolore veniam exercitation irure fugiat aliqua consequat anim."
-            }
-          }
-        ]
+      "show_navigation_arrows": {
+        "__TYPE__": "BooleanContent",
+        "value": false
+      },
+      "show_caption": {
+        "__TYPE__": "BooleanContent",
+        "value": true
+      },
+      "auto_play": {
+        "__TYPE__": "BooleanContent",
+        "value": false
       }
     },
     "items": [
@@ -36,13 +30,13 @@
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
-                "width": 6000,
-                "height": 4000
+                "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
+                "width": 3456,
+                "height": 3456
               },
-              "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
-              "width": 6000,
-              "height": 4000,
+              "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
+              "width": 3456,
+              "height": 3456,
               "edit": {
                 "zoom": 1,
                 "crop": {
@@ -62,20 +56,99 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Do irure minim do veniam. Aliquip amet consequat aute Lorem dolore laboris minim qui nostrud irure sint esse."
+                    "text": "Elit id eu qui dolore ut laboris ut aute deserunt occaecat culpa quis. Incididunt veniam minim deserunt quis laboris pariatur commodo voluptate excepteur fugiat elit."
                   }
                 }
               ]
             }
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "withDescription",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Later"
+            }
+          }
+        ]
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Ad est anim labore id exercitation aute do elit reprehenderit. Occaecat ipsum eiusmod et ut ut do sunt qui fugiat."
+            }
+          }
+        ]
+      },
+      "show_pagination": {
+        "__TYPE__": "BooleanContent",
+        "value": false
+      },
+      "show_navigation_arrows": {
+        "__TYPE__": "BooleanContent",
+        "value": false
+      },
+      "show_caption": {
+        "__TYPE__": "BooleanContent",
+        "value": true
+      },
+      "auto_play": {
+        "__TYPE__": "BooleanContent",
+        "value": false
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "image",
+            {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
+                "width": 3560,
+                "height": 5340
+              },
+              "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
+              "width": 3560,
+              "height": 5340,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
           ],
           [
-            "test",
+            "description",
             {
-              "__TYPE__": "LinkContent",
-              "value": {
-                "__TYPE__": "DocumentLink",
-                "id": "mock_document_id"
-              }
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Commodo dolor est ad labore proident in sit est qui sit nisi excepteur Lorem laborum qui. Esse do eiusmod ea id non labore reprehenderit incididunt. Proident do et nisi cillum reprehenderit culpa elit minim magna in proident officia nulla non."
+                  }
+                }
+              ]
             }
           ]
         ]

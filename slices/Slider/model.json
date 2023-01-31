@@ -11,20 +11,40 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "Slider",
       "primary": {
-        "title": {
-          "type": "StructuredText",
+        "show_pagination": {
+          "type": "Boolean",
           "config": {
-            "single": "heading1",
-            "label": "Title",
-            "placeholder": "This is where it all begins..."
+            "label": "Show Pagination",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
           }
         },
-        "description": {
-          "type": "StructuredText",
+        "show_navigation_arrows": {
+          "type": "Boolean",
           "config": {
-            "single": "paragraph",
-            "label": "Description",
-            "placeholder": "A nice description of your feature"
+            "label": "Show Navigation Arrows",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "show_caption": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show Caption",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "auto_play": {
+          "type": "Boolean",
+          "config": {
+            "label": "Auto Play",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
           }
         }
       },
@@ -45,15 +65,86 @@
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
-        },
-        "test": {
-          "type": "Link",
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    },
+    {
+      "id": "withDescription",
+      "name": "With description",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Slider",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
           "config": {
-            "label": "test",
-            "select": "document",
-            "customtypes": [
-              "costume"
-            ]
+            "single": "heading1",
+            "label": "Title",
+            "placeholder": "This is where it all begins..."
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "single": "paragraph",
+            "label": "Description",
+            "placeholder": "A nice description of your feature"
+          }
+        },
+        "show_pagination": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show Pagination",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "show_navigation_arrows": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show Navigation Arrows",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "show_caption": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show Caption",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "auto_play": {
+          "type": "Boolean",
+          "config": {
+            "label": "Auto Play",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        }
+      },
+      "items": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         }
       },

@@ -121,7 +121,8 @@
     },
     "Slider": {
       "default": {
-        "items": {}
+        "items": {},
+        "primary": {}
       }
     },
     "InstagramFeed": {
