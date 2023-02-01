@@ -9,7 +9,10 @@ import { PrismicRichText } from "@prismicio/react";
 const HeadingWithText = ({ slice }) => {
     return (
         <section className="mb-10">
-           <PrismicRichText field={slice.primary.title} />
+            <div className="mt-7 mb-2">
+                <PrismicRichText field={slice.primary.title} />
+            </div>
+
            <PrismicRichText field={slice.primary.description} />
         </section>
     )

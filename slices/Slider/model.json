@@ -156,6 +156,19 @@
             "placeholder_true": "true",
             "placeholder_false": "false"
           }
+        },
+        "text_placement": {
+          "type": "Select",
+          "config": {
+            "label": "Text Placement",
+            "placeholder": "",
+            "options": [
+              "Right",
+              "Left",
+              "Top",
+              "Bottom"
+            ]
+          }
         }
       },
       "items": {

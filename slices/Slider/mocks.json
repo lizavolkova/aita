@@ -122,6 +122,11 @@
       "auto_play": {
         "__TYPE__": "BooleanContent",
         "value": false
+      },
+      "text_placement": {
+        "__TYPE__": "FieldContent",
+        "value": "Top",
+        "type": "Select"
       }
     },
     "items": [

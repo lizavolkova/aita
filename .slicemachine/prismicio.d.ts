@@ -1081,6 +1081,16 @@ interface SliderSliceWithDescriptionPrimary {
      *
      */
     auto_play: prismicT.BooleanField;
+    /**
+     * Text Placement field in *Slider → Primary*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: slider.primary.text_placement
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    text_placement: prismicT.SelectField<"Right" | "Left" | "Top" | "Bottom">;
 }
 /**
  * Item in Slider → Items

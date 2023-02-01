@@ -19,6 +19,7 @@ const ImageGallery = ({ slice }) => {
               {slice.items.map((item,i) => {
                   return(
                       <PrismicNextImage
+                          key={item.image.id}
                           field={item.image}
                           className="block h-auto w-full p-2"
                           imgixParams={{

@@ -123,6 +123,9 @@
       "default": {
         "items": {},
         "primary": {}
+      },
+      "withDescription": {
+        "primary": {}
       }
     },
     "InstagramFeed": {
