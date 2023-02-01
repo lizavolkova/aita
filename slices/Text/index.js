@@ -4,14 +4,16 @@ import { PrismicRichText } from "@prismicio/react";
 import { Bounded } from "../../components/Bounded";
 
 const Text = ({ slice }) => {
+  console.log(slice.primary)
   return (
-    <Bounded as="section">
+    <section>
       {prismicH.isFilled.richText(slice.primary.text) && (
-        <div className="font-sans leading-relaxed">
+        <div className="">
+          {slice.primary.heading && <PrismicRichText field={slice.primary.heading} />}
           <PrismicRichText field={slice.primary.text} />
         </div>
       )}
-    </Bounded>
+    </section>
   );
 };
 

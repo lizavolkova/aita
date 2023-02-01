@@ -10,9 +10,14 @@ import { PreviewCard } from "../../components/PreviewCard";
 const LatestCostumes = ({ slice }) => {
   return (
       <HomeSection title={slice.primary.title} bgColor="bg-gray-100" fullWidth={true}>
-        <div className="grid gap-4 grid-cols-1 md:grid-cols-3 container mx-auto">
+        <div className="flex container mx-auto px-10">
           {slice.items.map(item => {
-            return <PreviewCard costume={item.costume} key={item.id} />
+              return (
+                  <div className="w-1/3 p-5 m-4 bg-white">
+                      {item.article.uid && <PreviewCard costume={item.article} key={item.id} />}
+                      {item.costume.uid && <PreviewCard costume={item.costume} key={item.id} />}
+                  </div>
+              )
           })}
         </div>
 
@@ -22,3 +27,5 @@ const LatestCostumes = ({ slice }) => {
 }
 
 export default LatestCostumes
+
+//<PreviewCard costume={item.costume} key={item.id} />

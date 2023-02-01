@@ -7,6 +7,7 @@ import { Layout } from "../components/Layout";
 import { components } from "../slices";
 
 const Index = ({ page, navigation, settings }) => {
+  console.log(page)
 
   return (
     <Layout

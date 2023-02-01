@@ -72,6 +72,7 @@ export async function getStaticProps({ previewData }) {
 
   const page = await client.getByUID("page", "costumes");
 
+
   const costumes = await client.getAllByType("costume", {
     orderings: [{ field: "my.costume.year", direction: "desc" }]
   });

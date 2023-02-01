@@ -15,25 +15,6 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
 });
 
-const LatestArticle = ({ article }) => {
-  const date = prismicH.asDate(
-    article.data.publishDate || article.first_publication_date
-  );
-
-  return (
-    <li>
-      <h1 className="mb-3 text-3xl font-semibold tracking-tighter text-slate-800 md:text-4xl">
-        <PrismicLink document={article}>
-          <PrismicText field={article.data.title} />
-        </PrismicLink>
-      </h1>
-      <p className="font-serif italic tracking-tighter text-slate-500">
-        {dateFormatter.format(date)}
-      </p>
-    </li>
-  );
-};
-
 const Article = ({ article, latestArticles, navigation, settings }) => {
   const date = prismicH.asDate(
     article.data.publishDate || article.first_publication_date
@@ -51,42 +32,14 @@ const Article = ({ article, latestArticles, navigation, settings }) => {
           {prismicH.asText(settings.data.name)}
         </title>
       </Head>
-      <Bounded>
-        <PrismicLink
-          href="/"
-          className="font-semibold tracking-tight text-slate-400"
-        >
-          &larr; Back to articles
-        </PrismicLink>
-      </Bounded>
       <article>
-        <Bounded className="pb-0">
-          <h1 className="mb-3 text-3xl font-semibold tracking-tighter text-slate-800 md:text-4xl">
-            <PrismicText field={article.data.title} />
-          </h1>
-          <p className="font-serif italic tracking-tighter text-slate-500">
+          <h2><PrismicText field={article.data.title} /></h2>
+          <span className="sub-title"><PrismicText field={article.data.sub_title} /></span>
+          <p className="font-serif italic tracking-tighter text-slate-500 mb-5">
             {dateFormatter.format(date)}
           </p>
-        </Bounded>
         <SliceZone slices={article.data.slices} components={components} />
       </article>
-      {latestArticles.length > 0 && (
-        <Bounded>
-          <div className="grid grid-cols-1 justify-items-center gap-16 md:gap-24">
-            <HorizontalDivider />
-            <div className="w-full">
-              <Heading size="2xl" className="mb-10">
-                Latest articles
-              </Heading>
-              <ul className="grid grid-cols-1 gap-12">
-                {latestArticles.map((article) => (
-                  <LatestArticle key={article.id} article={article} />
-                ))}
-              </ul>
-            </div>
-          </div>
-        </Bounded>
-      )}
     </Layout>
   );
 };

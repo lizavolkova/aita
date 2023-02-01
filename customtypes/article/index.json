@@ -21,6 +21,15 @@
           "single": "heading1"
         }
       },
+      "sub_title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Sub Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph"
+        }
+      },
       "publishDate": {
         "type": "Date",
         "config": {
@@ -28,10 +37,10 @@
           "placeholder": "Date the article was published"
         }
       },
-      "featuredImage": {
+      "preview_image": {
         "type": "Image",
         "config": {
-          "label": "Featured Image",
+          "label": "Preview Image",
           "constraint": {
             "width": 2000,
             "height": 1500

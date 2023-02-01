@@ -43,7 +43,9 @@ export default Article;
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
 
-  const costume = await client.getByUID("costume", params.uid);
+  const costume = await client.getByUID("costume", params.uid, {
+    fetchLinks: ['costume.title', 'costume.sub_title', 'costume.featured_image', 'article.title', 'article.sub_title', 'article.preview_image']
+  });
 
   const latestCostume = await client.getAllByType("costume", {
     limit: 3,
