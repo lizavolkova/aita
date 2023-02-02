@@ -1,8 +1,5 @@
 import {PrismicText, SliceZone} from "@prismicio/react";
-import {PrismicNextImage} from "@prismicio/next";
-import {ImageGalleryComponent} from "./ImageGallery";
 import {CostumeSubDetails} from "./CostumeSubDetails";
-import {Bounded} from "./Bounded";
 import {components} from "../slices";
 import React from "react";
 
@@ -13,7 +10,6 @@ export const CostumeDetailsComponent = ({
   year,
   materials,
   patterns,
-  featured_image,
   slices
 }) => {
   const mainImageGallerySlice = slices[0] ? [slices[0]] : undefined;

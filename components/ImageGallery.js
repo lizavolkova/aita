@@ -1,5 +1,3 @@
-import { PrismicText } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 

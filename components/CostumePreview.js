@@ -1,8 +1,8 @@
 import { PrismicText, PrismicLink } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 
-export const CostumePreviewComponent = ({ data, url, tags}) => {
-  const { title, sub_title, year, featured_image  } = data;
+export const CostumePreviewComponent = ({ data, url }) => {
+  const { title, sub_title, featured_image  } = data;
   return (
     <div className="m-2 lg:m-4">
       <PrismicLink href={url}>

@@ -10,7 +10,7 @@ const NavItem = ({ children }) => {
   );
 };
 
-export const Header = ({ withLogo = true, navigation, settings }) => {
+export const Header = ({ navigation, settings }) => {
   const [showMobileNav, setShowMobileNav] = React.useState(false);
 
   return (

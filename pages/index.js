@@ -27,7 +27,7 @@ const Index = ({ page, navigation, settings }) => {
 
 export default Index;
 
-export async function getStaticProps({ params, previewData }) {
+export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
   const page = await client.getByUID("page", "home", {

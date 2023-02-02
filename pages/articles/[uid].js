@@ -1,13 +1,10 @@
 import Head from "next/head";
-import { PrismicLink, PrismicText, SliceZone } from "@prismicio/react";
+import { PrismicText, SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
-
 import { createClient } from "../../prismicio";
 import { components } from "../../slices";
 import { Layout } from "../../components/Layout";
-import { Bounded } from "../../components/Bounded";
-import { Heading } from "../../components/Heading";
-import { HorizontalDivider } from "../../components/HorizontalDivider";
+
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
@@ -15,7 +12,7 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
 });
 
-const Article = ({ article, latestArticles, navigation, settings }) => {
+const Article = ({ article, navigation, settings }) => {
   const date = prismicH.asDate(
     article.data.publishDate || article.first_publication_date
   );

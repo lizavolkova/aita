@@ -1,12 +1,10 @@
 import { Layout } from "../../components/Layout";
 import Head from "next/head";
 import * as prismicH from "@prismicio/helpers";
-import { Bounded } from "../../components/Bounded";
 import { createClient } from "../../prismicio";
 import { components } from "../../slices";
 import { SliceZone } from "@prismicio/react";
 import { CostumePreviewComponent } from "../../components/CostumePreview";
-import { ImageGalleryComponent } from "../../components/ImageGallery";
 import { ImageGalleryAnimated } from "../../components/ImageGalleryAnimated";
 import { XBlock } from "react-xmasonry";
 

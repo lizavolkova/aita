@@ -35,6 +35,8 @@
     "concurrently": "^7.6.0",
     "eslint": "8.31.0",
     "eslint-config-next": "^13.1.1",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-react": "^7.32.2",
     "postcss": "^8.4.20",
     "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.1",

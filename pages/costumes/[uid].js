@@ -1,27 +1,11 @@
 import Head from "next/head";
-import { PrismicLink, PrismicText, SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
-
 import { createClient } from "../../prismicio";
-import { components } from "../../slices";
 import { Layout } from "../../components/Layout";
-import { Bounded } from "../../components/Bounded";
-import { Heading } from "../../components/Heading";
-import { HorizontalDivider } from "../../components/HorizontalDivider";
 import { CostumeDetailsComponent } from "../../components/CostumeDetails";
 import React from "react";
 
-const dateFormatter = new Intl.DateTimeFormat("en-US", {
-  month: "short",
-  day: "numeric",
-  year: "numeric",
-});
-
-const Article = ({ costume, latestCostume, navigation, settings }) => {
-  const date = prismicH.asDate(
-    costume.data.publishDate || costume.first_publication_date
-  );
-
+const Article = ({ costume, navigation, settings }) => {
   return (
     <Layout
       withHeaderDivider={false}

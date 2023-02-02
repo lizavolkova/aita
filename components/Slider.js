@@ -36,7 +36,7 @@ export const SliderComponent = ({ items, primary, speed }) => {
             speed={speed ? speed : 2000}
             modules={[EffectFade, Navigation, Pagination, Autoplay]}
         >
-            {items.map( (item,i) => {
+            {items.map( item => {
                 return (
                     <SwiperSlide key={item.image.url}>
                         <div className="relative">
