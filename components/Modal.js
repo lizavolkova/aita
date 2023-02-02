@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-const Modal = ({ children, showModal, setShowModal, fullScreen }) => {
+const Modal = ({ children, showModal, setShowModal, fullScreen = false }) => {
   useEffect(() => {
     document.body.style.overflowY = showModal ? "hidden" : "scroll";
   });
@@ -16,8 +16,8 @@ const Modal = ({ children, showModal, setShowModal, fullScreen }) => {
             ></div>
           </div>
           <div
-            className={`fixed flex flex-col items-center bg-white px-4 py-0 ${
-              fullScreen ? "h-full w-full" : "h-full w-full md:max-h-[90vh]"
+            className={`fixed flex flex-col items-center bg-white px-4 py-0 md:pb-5 ${
+              fullScreen ? "h-full w-full" : "md:max-h-[90vh]"
             }`}
           >
             <div

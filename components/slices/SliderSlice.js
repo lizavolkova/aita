@@ -1,5 +1,5 @@
 import React from "react";
-import { PrismicRichText, PrismicText } from "@prismicio/react";
+import { PrismicRichText } from "@prismicio/react";
 import { SliderComponent } from "../../components/Slider";
 
 const parentClass = (text) => {
