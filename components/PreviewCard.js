@@ -2,7 +2,6 @@ import { PrismicText, PrismicLink } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 
 export const PreviewCard = ({ costume }) => {
-    console.log(costume)
     const { preview_image, title, sub_title } = costume.data;
 
     return (

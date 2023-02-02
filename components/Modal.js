@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const Modal = ({children, showModal, setShowModal}) => {
+const Modal = ({children, showModal, setShowModal, fullScreen}) => {
 
     useEffect(() => {
         document.body.style.overflowY = showModal ? 'hidden' : 'scroll';
@@ -14,10 +14,10 @@ const Modal = ({children, showModal, setShowModal}) => {
                     <div className="fixed inset-0">
                         <div className="absolute inset-0 w-full h-full bg-gray-500 opacity-75" onClick={() => setShowModal(false)}></div>
                     </div>
-                    <div className="fixed bg-white px-4 py-5 max-h-[90vh] flex flex-col items-center">
+                    <div className={`fixed bg-white px-4 py-5 flex flex-col items-center ${fullScreen ? 'w-full h-full' : 'max-h-[90vh]'}`}>
                         <div className="self-end cursor-pointer p-1" onClick={() => setShowModal(false)}>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                 stroke="currentColor" className="w-8 h-8">
+                                 stroke="currentColor" className={`${fullScreen ? 'w-10 h-10' : 'w-8 h-8'}`}>
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
                             </svg>
 

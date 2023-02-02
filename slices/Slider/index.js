@@ -30,7 +30,7 @@ const Slider = ({ slice }) => {
                     ?
                     <div className={`flex ${parentClass(text_placement)}`}>
                         <div className={`${text_placement === 'Right' || text_placement === 'Left' ? 'md:w-1/2 w-full' : 'w-full'}`}>
-                            <SliderComponent {...slice}/>
+                            <SliderComponent {...slice} speed={400}/>
                         </div>
                         <div className={`${text_placement === 'Right' || text_placement === 'Left' ? 'md:w-1/2 md:px-5 md-py-0 w-full py-5' : 'w-full py-5'}`}>
                             <PrismicRichText field={slice.primary.title} />

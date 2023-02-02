@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 
-export const SliderComponent = ({ items, primary }) => {
+export const SliderComponent = ({ items, primary, speed }) => {
     const { show_navigation_arrows, show_pagination, show_caption, auto_play, effect, showhometext, dim_slides } = primary;
     const autoPlay = auto_play ? {
         delay: 5000,
@@ -33,7 +33,7 @@ export const SliderComponent = ({ items, primary }) => {
             autoplay={autoPlay}
             pagination={show_pagination}
             effect={effect}
-            speed={2000}
+            speed={speed ? speed : 2000}
             modules={[EffectFade, Navigation, Pagination, Autoplay]}
         >
             {items.map( (item,i) => {
