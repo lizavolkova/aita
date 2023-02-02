@@ -1,7 +1,7 @@
-import React from 'react'
-import { PrismicRichText } from '@prismicio/react'
-import {PrismicNextImage} from "@prismicio/next";
-import { HomeSection } from '../../components/HomeSection';
+import React from "react";
+import { PrismicRichText } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
+import { HomeSection } from "../../components/HomeSection";
 
 /**
  * @typedef {import("@prismicio/client").Content.InstagramFeedSlice} InstagramFeedSlice
@@ -10,8 +10,11 @@ import { HomeSection } from '../../components/HomeSection';
  */
 const InstagramFeed = ({ slice }) => (
   <HomeSection title={slice.primary.title}>
-      <PrismicNextImage field={slice.primary.placeholder} className="block h-auto w-full rounded-full "/>
+    <PrismicNextImage
+      field={slice.primary.placeholder}
+      className="block h-auto w-full rounded-full "
+    />
   </HomeSection>
-)
+);
 
-export default InstagramFeed
+export default InstagramFeed;

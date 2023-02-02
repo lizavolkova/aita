@@ -1,15 +1,15 @@
-const colors = require('tailwindcss/colors');
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   content: ["./pages/**/*.js", "./components/**/*.js", "./slices/**/*.js"],
   theme: {
     fontFamily: {
-      sans: 'Poppins, ui-sans-serif',
-      serif: 'Lora, ui-serif'
+      sans: "Poppins, ui-sans-serif",
+      serif: "Lora, ui-serif",
     },
     extend: {
       colors: {
-        'main-color': colors.pink['400']
+        "main-color": colors.pink["400"],
       },
     },
   },

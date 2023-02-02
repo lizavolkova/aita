@@ -20,7 +20,6 @@ const Index = ({ page, navigation, settings }) => {
       <section>
         <SliceZone slices={page.data.slices} components={components} />
       </section>
-
     </Layout>
   );
 };
@@ -31,7 +30,7 @@ export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData });
 
   const page = await client.getByUID("page", "home", {
-    fetchLinks: ['costume.title', 'costume.sub_title', 'costume.preview_image']
+    fetchLinks: ["costume.title", "costume.sub_title", "costume.preview_image"],
   });
 
   const navigation = await client.getSingle("navigation");

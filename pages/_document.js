@@ -12,8 +12,10 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Vollkorn+SC:wght@400;700&display=swap"
           rel="stylesheet"
         />
-        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;700&display=swap"
-          rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <body className="overflow-x-hidden antialiased">
         <Main />

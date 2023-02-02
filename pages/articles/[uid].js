@@ -5,7 +5,6 @@ import { createClient } from "../../prismicio";
 import { components } from "../../slices";
 import { Layout } from "../../components/Layout";
 
-
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
   day: "numeric",
@@ -30,11 +29,15 @@ const Article = ({ article, navigation, settings }) => {
         </title>
       </Head>
       <article>
-          <h2><PrismicText field={article.data.title} /></h2>
-          <span className="sub-title"><PrismicText field={article.data.sub_title} /></span>
-          <p className="font-serif italic tracking-tighter text-slate-500 mb-5">
-            {dateFormatter.format(date)}
-          </p>
+        <h2>
+          <PrismicText field={article.data.title} />
+        </h2>
+        <span className="sub-title">
+          <PrismicText field={article.data.sub_title} />
+        </span>
+        <p className="mb-5 font-serif italic tracking-tighter text-slate-500">
+          {dateFormatter.format(date)}
+        </p>
         <SliceZone slices={article.data.slices} components={components} />
       </article>
     </Layout>

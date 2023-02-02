@@ -8,21 +8,24 @@ export const Layout = ({
   withLogo,
   withSignUpForm,
   children,
-    fullWidth
+  fullWidth,
 }) => {
   return (
-      <div>
-          <Header
-              withLogo={withLogo}
-              withDivider={withHeaderDivider}
-              navigation={navigation}
-              settings={settings}
-          />
-          <div className={`${fullWidth ? '' : 'max-w-[1300px]'} text-slate-700 mx-auto mt-28`}>
-              <main className="p-2 md:p-0">{children}</main>
-              <Footer withSignUpForm={withSignUpForm} settings={settings} />
-          </div>
+    <div>
+      <Header
+        withLogo={withLogo}
+        withDivider={withHeaderDivider}
+        navigation={navigation}
+        settings={settings}
+      />
+      <div
+        className={`${
+          fullWidth ? "" : "max-w-[1300px]"
+        } mx-auto mt-28 text-slate-700`}
+      >
+        <main className="p-2 md:p-0">{children}</main>
+        <Footer withSignUpForm={withSignUpForm} settings={settings} />
       </div>
-
+    </div>
   );
 };

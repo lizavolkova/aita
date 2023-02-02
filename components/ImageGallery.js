@@ -1,6 +1,5 @@
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
-
 export const ImageGalleryComponent = ({ children }) => {
   return (
     <div className="masonry">

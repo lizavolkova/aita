@@ -52,10 +52,7 @@
           "config": {
             "label": "Effect",
             "placeholder": "",
-            "options": [
-              "None",
-              "fade"
-            ]
+            "options": ["None", "fade"]
           }
         },
         "showhometext": {
@@ -162,12 +159,7 @@
           "config": {
             "label": "Text Placement",
             "placeholder": "",
-            "options": [
-              "Right",
-              "Left",
-              "Top",
-              "Bottom"
-            ]
+            "options": ["Right", "Left", "Top", "Bottom"]
           }
         }
       },

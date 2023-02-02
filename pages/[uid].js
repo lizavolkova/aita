@@ -26,7 +26,7 @@ export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
 
   const page = await client.getByUID("page", params.uid, {
-    fetchLinks: ['costume.title', 'costume.sub_title', 'costume.preview_image']
+    fetchLinks: ["costume.title", "costume.sub_title", "costume.preview_image"],
   });
 
   const navigation = await client.getSingle("navigation");
@@ -47,7 +47,9 @@ export async function getStaticPaths() {
   const pages = await client.getAllByType("page");
 
   return {
-    paths: pages.map((page) => prismicH.asLink(page)).filter(page => page !== '/costumes'),
+    paths: pages
+      .map((page) => prismicH.asLink(page))
+      .filter((page) => page !== "/costumes"),
     fallback: false,
   };
 }
