@@ -5,7 +5,7 @@ export default function Document() {
     <Html>
       <Head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,700;1,400&display=swap" rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,700;1,400&display=swap"
           rel="stylesheet"
         />
         <link
@@ -13,7 +13,7 @@ export default function Document() {
           rel="stylesheet"
         />
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;700&display=swap"
-                        rel="stylesheet" />
+          rel="stylesheet" />
       </Head>
       <body className="overflow-x-hidden antialiased">
         <Main />
@@ -22,6 +22,3 @@ export default function Document() {
     </Html>
   );
 }
-// https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@400;700&display=swap
-//https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Vollkorn+SC:wght@400;700&display=swap
-// https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;700&display=swap
