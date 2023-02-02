@@ -19,7 +19,7 @@ export const Layout = ({
               settings={settings}
           />
           <div className={`${fullWidth ? '' : 'max-w-[1300px]'} text-slate-700 mx-auto mt-28`}>
-              <main>{children}</main>
+              <main className="p-2 md:p-0">{children}</main>
               <Footer withSignUpForm={withSignUpForm} settings={settings} />
           </div>
       </div>

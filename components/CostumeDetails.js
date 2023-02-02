@@ -24,7 +24,7 @@ export const CostumeDetailsComponent = ({
       <div className="mb-20">
 
           <div className="grid grid-cols-12">
-            <section className="col-span-12 lg:col-span-12 pr-5">
+            <section className="col-span-12 lg:col-span-12 pr-0 md:pr-5">
               <h2>
                 <PrismicText field={title} />
               </h2>

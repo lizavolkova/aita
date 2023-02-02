@@ -31,9 +31,7 @@ const Article = ({ costume, latestCostume, navigation, settings }) => {
       <Head>
         <title></title>
       </Head>
-      <Bounded size="widest">
         <CostumeDetailsComponent {...costume.data} />
-      </Bounded>
     </Layout>
   );
 };

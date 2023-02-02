@@ -11,12 +11,13 @@ import { HomeSection } from '../../components/HomeSection';
 const AboutMeShort = ({ slice }) => (
 
   <HomeSection title={slice.primary.title}>
-      <div className="w-full flex justify-center pt-20 ">
-          <div className="grid grid-cols-3 gap-4 w-1/2">
+      <div className="w-full flex justify-center pt-5 px-5
+      md:pt-20 ">
+          <div className="grid grid-cols-3 gap-4 w-full md:w-1/2">
               <div className="flex justify-end ">
                   <PrismicNextImage
                       field={slice.primary.photo}
-                      className="block h-auto w-56 rounded-full "
+                      className="block h-[100px] w-[100px] md:h-auto md:w-56 rounded-full object-cover md:object-fill"
                   /></div>
               <div className="col-span-2 flex flex-col justify-center">
                   <PrismicRichText field={slice.primary.heading} />

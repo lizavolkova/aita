@@ -43,15 +43,16 @@ export const SliderComponent = ({ items, primary, speed }) => {
                             <PrismicNextImage
                                 field={item.image}
                                 imgixParams={imgixParams}
+                                className={`${showhometext ? 'object-cover min-h-[70vh] md:min-h-0' : '' }`}
                             />
                             {show_caption && item.description && <span className="absolute bottom-0 left-0 w-full bg-black/50 text-white p-2" >
                                 <PrismicText field={item.description} />
                             </span>}
                             {showhometext &&
-                                <div className="absolute w-3/4 left-0 right-0 mx-auto top-1/2 -translate-y-1/2 flex flex-col text-center text-white">
+                                <div className="absolute w-full md:w-3/4 left-0 right-0 mx-auto top-1/2 -translate-y-1/2 flex flex-col text-center text-white">
                                     <p>Hi, my name is Liza!</p>
-                                    <span className="font-serif text-6xl uppercase py-6">This is Adventures In Time</span>
-                                    <h4>A place to showcase my work</h4>
+                                    <span className="font-serif text-2xl md:text-6xl uppercase py-2 md:py-6">This is Adventures In Time</span>
+                                    <h4 className="text-lg md:text-2xl">A place to showcase my work</h4>
                                 </div>
                             }
 

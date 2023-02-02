@@ -609,6 +609,17 @@ interface ImageSliceDefaultPrimary {
      *
      */
     caption: prismicT.RichTextField;
+    /**
+     * Hide modal field in *Image → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: image.primary.hide_modal
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    hide_modal: prismicT.BooleanField;
 }
 /**
  * Default variation for Image Slice
