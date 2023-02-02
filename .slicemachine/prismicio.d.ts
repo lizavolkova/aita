@@ -196,7 +196,7 @@ interface CostumeDocumentData {
  * Slice for *Costume → Slice Zone*
  *
  */
-type CostumeDocumentDataSlicesSlice = HeadingWithTextSlice | ImageGallerySlice | SliderSlice | LatestCostumesSlice;
+type CostumeDocumentDataSlicesSlice = HeadingWithTextSlice | ImageGallerySlice | SliderSlice | ArticlePreviewSlice;
 /**
  * Costume document from Prismic
  *
@@ -297,7 +297,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = ImageSlice | QuoteSlice | TextSlice | ContactFormSlice | SliderSlice | InstagramFeedSlice | AboutMeShortSlice | LatestCostumesSlice;
+type PageDocumentDataSlicesSlice = ImageSlice | QuoteSlice | TextSlice | ContactFormSlice | SliderSlice | InstagramFeedSlice | AboutMeShortSlice | ArticlePreviewSlice;
 /**
  * Page document from Prismic
  *
@@ -404,6 +404,81 @@ type AboutMeShortSliceVariation = AboutMeShortSliceDefault;
  */
 export type AboutMeShortSlice = prismicT.SharedSlice<"about_me_short", AboutMeShortSliceVariation>;
 /**
+ * Primary content in ArticlePreview → Primary
+ *
+ */
+interface ArticlePreviewSliceDefaultPrimary {
+    /**
+     * Title field in *ArticlePreview → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: article_preview.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *ArticlePreview → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: article_preview.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Item in ArticlePreview → Items
+ *
+ */
+export interface ArticlePreviewSliceDefaultItem {
+    /**
+     * Costume field in *ArticlePreview → Items*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article_preview.items[].costume
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    costume: prismicT.RelationField<"costume">;
+    /**
+     * Article field in *ArticlePreview → Items*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article_preview.items[].article
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    article: prismicT.RelationField<"article">;
+}
+/**
+ * Default variation for ArticlePreview Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `ArticlePreview`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ArticlePreviewSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ArticlePreviewSliceDefaultPrimary>, Simplify<ArticlePreviewSliceDefaultItem>>;
+/**
+ * Slice variation for *ArticlePreview*
+ *
+ */
+type ArticlePreviewSliceVariation = ArticlePreviewSliceDefault;
+/**
+ * ArticlePreview Shared Slice
+ *
+ * - **API ID**: `article_preview`
+ * - **Description**: `ArticlePreview`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ArticlePreviewSlice = prismicT.SharedSlice<"article_preview", ArticlePreviewSliceVariation>;
+/**
  * Default variation for ContactForm Slice
  *
  * - **API ID**: `default`
@@ -426,115 +501,6 @@ type ContactFormSliceVariation = ContactFormSliceDefault;
  *
  */
 export type ContactFormSlice = prismicT.SharedSlice<"contact_form", ContactFormSliceVariation>;
-/**
- * Primary content in CostumeDetails → Primary
- *
- */
-interface GalleryImageSliceDefaultPrimary {
-    /**
-     * Name field in *CostumeDetails → Primary*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: Costume Name
-     * - **API ID Path**: gallery_image.primary.name
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    name: prismicT.TitleField;
-    /**
-     * Sub Title field in *CostumeDetails → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: gallery_image.primary.sub_title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    sub_title: prismicT.RichTextField;
-    /**
-     * Description field in *CostumeDetails → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: Game, years, etc
-     * - **API ID Path**: gallery_image.primary.description
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    description: prismicT.RichTextField;
-    /**
-     * Year field in *CostumeDetails → Primary*
-     *
-     * - **Field Type**: Timestamp
-     * - **Placeholder**: *None*
-     * - **API ID Path**: gallery_image.primary.year
-     * - **Documentation**: https://prismic.io/docs/core-concepts/timestamp
-     *
-     */
-    year: prismicT.TimestampField;
-    /**
-     * Materials field in *CostumeDetails → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: gallery_image.primary.materials
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    materials: prismicT.RichTextField;
-    /**
-     * Patterns field in *CostumeDetails → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: gallery_image.primary.patterns
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    patterns: prismicT.RichTextField;
-    /**
-     * Construction field in *CostumeDetails → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: How it was made
-     * - **API ID Path**: gallery_image.primary.construction
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    construction: prismicT.RichTextField;
-    /**
-     * FeaturedImage field in *CostumeDetails → Primary*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: gallery_image.primary.featuredimage
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    featuredimage: prismicT.ImageField<never>;
-}
-/**
- * Default variation for CostumeDetails Slice
- *
- * - **API ID**: `default`
- * - **Description**: `GalleryImage`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type GalleryImageSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<GalleryImageSliceDefaultPrimary>, never>;
-/**
- * Slice variation for *CostumeDetails*
- *
- */
-type GalleryImageSliceVariation = GalleryImageSliceDefault;
-/**
- * CostumeDetails Shared Slice
- *
- * - **API ID**: `gallery_image`
- * - **Description**: `GalleryImage`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type GalleryImageSlice = prismicT.SharedSlice<"gallery_image", GalleryImageSliceVariation>;
 /**
  * Primary content in HeadingWithText → Primary
  *
@@ -1252,6 +1218,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArticleDocumentData, ArticleDocumentDataSlicesSlice, ArticleDocument, CostumeDocumentData, CostumeDocumentDataSlicesSlice, CostumeDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, AboutMeShortSliceDefaultPrimary, AboutMeShortSliceDefault, AboutMeShortSliceVariation, AboutMeShortSlice, ContactFormSliceDefault, ContactFormSliceVariation, ContactFormSlice, GalleryImageSliceDefaultPrimary, GalleryImageSliceDefault, GalleryImageSliceVariation, GalleryImageSlice, HeadingWithTextSliceDefaultPrimary, HeadingWithTextSliceDefault, HeadingWithTextSliceVariation, HeadingWithTextSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceWidePrimary, ImageSliceWide, ImageSliceVariation, ImageSlice, ImageGallerySliceDefaultPrimary, ImageGallerySliceDefaultItem, ImageGallerySliceDefault, ImageGallerySliceVariation, ImageGallerySlice, InstagramFeedSliceDefaultPrimary, InstagramFeedSliceDefault, InstagramFeedSliceVariation, InstagramFeedSlice, LatestCostumesSliceDefaultPrimary, LatestCostumesSliceDefaultItem, LatestCostumesSliceDefault, LatestCostumesSliceVariation, LatestCostumesSlice, QuoteSliceDefaultPrimary, QuoteSliceDefault, QuoteSliceVariation, QuoteSlice, SliderSliceDefaultPrimary, SliderSliceDefaultItem, SliderSliceDefault, SliderSliceWithDescriptionPrimary, SliderSliceWithDescriptionItem, SliderSliceWithDescription, SliderSliceVariation, SliderSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceHeadingWithTextPrimary, TextSliceHeadingWithText, TextSliceVariation, TextSlice };
+        export type { ArticleDocumentData, ArticleDocumentDataSlicesSlice, ArticleDocument, CostumeDocumentData, CostumeDocumentDataSlicesSlice, CostumeDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, AboutMeShortSliceDefaultPrimary, AboutMeShortSliceDefault, AboutMeShortSliceVariation, AboutMeShortSlice, ArticlePreviewSliceDefaultPrimary, ArticlePreviewSliceDefaultItem, ArticlePreviewSliceDefault, ArticlePreviewSliceVariation, ArticlePreviewSlice, ContactFormSliceDefault, ContactFormSliceVariation, ContactFormSlice, HeadingWithTextSliceDefaultPrimary, HeadingWithTextSliceDefault, HeadingWithTextSliceVariation, HeadingWithTextSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceWidePrimary, ImageSliceWide, ImageSliceVariation, ImageSlice, ImageGallerySliceDefaultPrimary, ImageGallerySliceDefaultItem, ImageGallerySliceDefault, ImageGallerySliceVariation, ImageGallerySlice, InstagramFeedSliceDefaultPrimary, InstagramFeedSliceDefault, InstagramFeedSliceVariation, InstagramFeedSlice, LatestCostumesSliceDefaultPrimary, LatestCostumesSliceDefaultItem, LatestCostumesSliceDefault, LatestCostumesSliceVariation, LatestCostumesSlice, QuoteSliceDefaultPrimary, QuoteSliceDefault, QuoteSliceVariation, QuoteSlice, SliderSliceDefaultPrimary, SliderSliceDefaultItem, SliderSliceDefault, SliderSliceWithDescriptionPrimary, SliderSliceWithDescriptionItem, SliderSliceWithDescription, SliderSliceVariation, SliderSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceHeadingWithTextPrimary, TextSliceHeadingWithText, TextSliceVariation, TextSlice };
     }
 }

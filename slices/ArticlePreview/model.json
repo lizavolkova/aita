@@ -1,23 +1,22 @@
 {
-  "id": "latest_costumes",
+  "id": "article_preview",
   "type": "SharedSlice",
-  "name": "LatestCostumes",
-  "description": "LatestCostumes",
+  "name": "ArticlePreview",
+  "description": "ArticlePreview",
   "variations": [
     {
       "id": "default",
       "name": "Default",
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
-      "description": "LatestCostumes",
+      "description": "ArticlePreview",
       "primary": {
         "title": {
           "type": "StructuredText",
           "config": {
+            "single": "heading1",
             "label": "Title",
-            "placeholder": "This is where it all begins...",
-            "allowTargetBlank": true,
-            "single": "heading1,heading2,heading4,heading5,heading6,heading3"
+            "placeholder": "This is where it all begins..."
           }
         },
         "description": {
@@ -35,7 +34,9 @@
           "config": {
             "label": "Costume",
             "select": "document",
-            "customtypes": ["costume"]
+            "customtypes": [
+              "costume"
+            ]
           }
         },
         "article": {
@@ -43,7 +44,9 @@
           "config": {
             "label": "Article",
             "select": "document",
-            "customtypes": ["article"]
+            "customtypes": [
+              "article"
+            ]
           }
         }
       },

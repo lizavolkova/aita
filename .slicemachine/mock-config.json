@@ -146,6 +146,11 @@
         "items": {},
         "primary": {}
       }
+    },
+    "ArticlePreview": {
+      "default": {
+        "items": {}
+      }
     }
   }
 }

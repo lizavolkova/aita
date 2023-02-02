@@ -16,12 +16,12 @@ const Modal = ({ children, showModal, setShowModal, fullScreen }) => {
             ></div>
           </div>
           <div
-            className={`fixed flex flex-col items-center bg-white px-4 py-5 ${
+            className={`fixed flex flex-col items-center bg-white px-4 py-0 ${
               fullScreen ? "h-full w-full" : "h-full w-full md:max-h-[90vh]"
             }`}
           >
             <div
-              className="cursor-pointer self-end p-1"
+              className="cursor-pointer self-end p-4"
               onClick={() => setShowModal(false)}
             >
               <svg

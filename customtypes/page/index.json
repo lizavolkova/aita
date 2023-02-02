@@ -47,7 +47,7 @@
             "about_me_short": {
               "type": "SharedSlice"
             },
-            "latest_costumes": {
+            "article_preview": {
               "type": "SharedSlice"
             }
           }

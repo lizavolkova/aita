@@ -108,7 +108,7 @@
             "slider": {
               "type": "SharedSlice"
             },
-            "latest_costumes": {
+            "article_preview": {
               "type": "SharedSlice"
             }
           }

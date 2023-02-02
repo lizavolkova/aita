@@ -2,7 +2,7 @@ import Head from "next/head";
 import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../../prismicio";
 import { Layout } from "../../components/Layout";
-import { CostumeDetailsComponent } from "../../components/CostumeDetails";
+import CostumeDetails from "../../components/CostumeDetails";
 import React from "react";
 
 const Article = ({ costume, navigation, settings }) => {
@@ -15,7 +15,7 @@ const Article = ({ costume, navigation, settings }) => {
       <Head>
         <title></title>
       </Head>
-      <CostumeDetailsComponent {...costume.data} />
+      <CostumeDetails {...costume.data} />
     </Layout>
   );
 };
