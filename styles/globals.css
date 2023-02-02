@@ -43,6 +43,16 @@
     }
 }
 
+.fixed {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.fixed.opacity-100 {
+    opacity: 1;
+}
+
+
 @keyframes comeIn {
     0% { transform: scale(.5); opacity: 0; }
     75% { transform: scale(1.03); opacity: 1; }

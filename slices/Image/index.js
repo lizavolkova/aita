@@ -2,6 +2,7 @@ import * as prismicH from "@prismicio/helpers";
 import { PrismicRichText } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import { Lightbox } from "react-modal-image";
+import Modal from "../../components/Modal";
 import React, { useState } from "react";
 
 import { Bounded } from "../../components/Bounded";
@@ -9,21 +10,22 @@ import { Bounded } from "../../components/Bounded";
 const Image = ({ slice }) => {
     const [showModal, setShowModal] = React.useState(false);
     const image = slice.primary.image;
+    //
+    // const setShowModal = () => {
+    //     document.body.style.overflowY = isOpen ? 'scroll' : 'hidden';
+    // }
 
   return (
     <Bounded as="section" size={slice.variation === "wide" ? "widest" : "base"}>
-        {showModal &&
-        <Lightbox
-            medium={image.url}
-            large={image.url}
-            onClose={setShowModal}
-            hideDownload={true}
-            hideZoom={true}
-        />}
+        <Modal showModal={showModal} setShowModal={setShowModal} >
+            {/*<PrismicNextImage field={image} className="max-w-screen max-h-full max-w-full w-full h-full" />*/}
+            <img src={image.url} className="object-contain max-h-[84vh] max-w-full h-auto w-auto"/>
+            {/*<PrismicNextImage field={image} className="object-contain h-full w-full max-h-[80vh]" />*/}
+        </Modal>
       <figure className="grid grid-cols-1 gap-4" onClick={() => setShowModal(true)}>
         {prismicH.isFilled.image(image) && (
-          <div className="bg-gray-100">
-            <PrismicNextImage field={image} sizes="100vw" className="w-full" />
+          <div className="bg-gray-100 cursor-pointer">
+            <PrismicNextImage field={image} sizes="100vw" className="w-full" onClick={() => setShowModal(true)} />
           </div>
         )}
         {prismicH.isFilled.richText(slice.primary.caption) && (
