@@ -13,7 +13,7 @@ const ImageSlice = ({ slice }) => {
     return (
         <Bounded as="section" size={slice.variation === "wide" ? "widest" : "base"}>
             {!slice.primary.hide_modal && (
-                <Modal showModal={showModal} setShowModal={setShowModal}>
+                <Modal showModal={showModal} setShowModal={setShowModal} >
                     {/*<PrismicNextImage field={image} className="h-auto max-h-[84vh] w-auto max-w-full object-contain" />*/}
                     <img src={image.url} className="h-auto max-h-[84vh] w-auto max-w-full object-contain" width={1050} height={1050} alt={image.alt}/>
 

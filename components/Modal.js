@@ -17,7 +17,7 @@ const Modal = ({ children, showModal, setShowModal, fullScreen = false }) => {
           </div>
           <div
             className={`fixed flex flex-col items-center bg-white px-4 py-0 md:pb-5 ${
-              fullScreen ? "h-full w-full" : "md:max-h-[90vh]"
+              fullScreen ? "h-full w-full" : "h-full w-full md:h-auto md:w-auto md:max-h-[90vh]"
             }`}
           >
             <div
