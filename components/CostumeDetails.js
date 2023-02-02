@@ -16,7 +16,7 @@ export const CostumeDetailsComponent = ({
   featured_image,
   slices
 }) => {
-  const mainImageGallerySlice = [slices[0]];
+  const mainImageGallerySlice = slices[0] ? [slices[0]] : undefined;
   const [, ...otherSlices] = slices;
 
   return (
@@ -42,9 +42,9 @@ export const CostumeDetailsComponent = ({
             </section>
 
 
-            <section className="col-span-12 lg:col-span-12">
+            {mainImageGallerySlice && <section className="col-span-12 lg:col-span-12">
               <SliceZone slices={mainImageGallerySlice} components={components} />
-            </section>
+            </section>}
 
             <section className="col-span-12 lg:col-span-12 bg-gray-100 p-6 my-6">
               <div className="col-span-1">
@@ -53,9 +53,11 @@ export const CostumeDetailsComponent = ({
             </section>
 
 
+            {otherSlices.length > 0 &&
             <section className="col-span-12 lg:col-span-12">
               <SliceZone slices={otherSlices} components={components} />
             </section>
+            }
 
 
 
