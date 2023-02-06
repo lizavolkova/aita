@@ -7,8 +7,8 @@ const Modal = ({ children, showModal, setShowModal, fullScreen = false }) => {
 
   return (
     <>
-      {showModal && (
-        <div className="fixed inset-0 bottom-0 z-20 flex h-auto items-center justify-center">
+      {/*{showModal && (*/}
+        <div className={`${showModal ? 'z-20 visible' : '-z-10 hidden'} fixed inset-0 bottom-0  flex h-auto items-center justify-center`}>
           <div className="fixed inset-0">
             <div
               className="absolute inset-0 h-full w-full bg-gray-500 opacity-75"
@@ -16,9 +16,10 @@ const Modal = ({ children, showModal, setShowModal, fullScreen = false }) => {
             ></div>
           </div>
           <div
-            className={`fixed flex flex-col items-center bg-white px-4 py-0 md:pb-5 ${
-              fullScreen ? "h-full w-full" : "h-full w-full md:h-auto md:w-auto md:max-h-[90vh]"
-            }`}
+            className={`bg-white transition-opacity fixed flex flex-col items-center px-4 py-0 md:pb-5 
+            ${fullScreen ? "h-full w-full" : "h-full w-full md:h-auto md:w-auto md:max-h-[90vh]"}
+            ${showModal ? 'opacity-100' : 'opacity-0'}
+            `}
           >
             <div
               className="cursor-pointer self-end p-4"
@@ -42,7 +43,7 @@ const Modal = ({ children, showModal, setShowModal, fullScreen = false }) => {
             <div>{children}</div>
           </div>
         </div>
-      )}
+       {/*)}*/}
     </>
   );
 };
