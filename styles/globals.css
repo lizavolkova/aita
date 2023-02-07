@@ -47,6 +47,11 @@
     @apply hidden;
     @apply md:block;
   }
+
+  .swiper-full-screen .swiper-slide-active {
+    height: 100vh;
+    @apply md:h-auto;
+  }
 }
 
 .fixed {
