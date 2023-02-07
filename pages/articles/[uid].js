@@ -4,6 +4,7 @@ import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../../prismicio";
 import { components } from "../../slices";
 import { Layout } from "../../components/Layout";
+import { PrismicNextImage } from "@prismicio/next";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
@@ -15,6 +16,7 @@ const Article = ({ article, navigation, settings }) => {
   const date = prismicH.asDate(
     article.data.publishDate || article.first_publication_date
   );
+  console.log(article);
 
   return (
     <Layout
@@ -38,6 +40,10 @@ const Article = ({ article, navigation, settings }) => {
         <p className="mb-5 font-serif italic tracking-tighter text-slate-500">
           {dateFormatter.format(date)}
         </p>
+        <PrismicNextImage
+          field={article.data.preview_image}
+          className="mb-10 block h-auto max-h-[300px] w-full object-cover object-top"
+        />
         <SliceZone slices={article.data.slices} components={components} />
       </article>
     </Layout>

@@ -6,8 +6,6 @@ import AboutMeShortSlice from "../../components/slices/AboutMeShortSlice";
  * @typedef {import("@prismicio/react").SliceComponentProps<AboutMeShortSlice>} AboutMeShortProps
  * @param { AboutMeShortProps }
  */
-const AboutMeShort = ({ slice }) => (
-    <AboutMeShortSlice slice={slice} />
-);
+const AboutMeShort = ({ slice }) => <AboutMeShortSlice slice={slice} />;
 
 export default AboutMeShort;

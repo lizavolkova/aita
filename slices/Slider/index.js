@@ -5,8 +5,6 @@ import SliderSlice from "../../components/slices/SliderSlice";
  * @typedef {import("@prismicio/react").SliceComponentProps<SliderSlice>} SliderProps
  * @param { SliderProps }
  */
-const Slider = ({ slice }) => (
-    <SliderSlice slice={slice} />
-);
+const Slider = ({ slice }) => <SliderSlice slice={slice} />;
 
 export default Slider;

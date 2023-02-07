@@ -34,9 +34,7 @@
           "config": {
             "label": "Costume",
             "select": "document",
-            "customtypes": [
-              "costume"
-            ]
+            "customtypes": ["costume"]
           }
         },
         "article": {
@@ -44,9 +42,7 @@
           "config": {
             "label": "Article",
             "select": "document",
-            "customtypes": [
-              "article"
-            ]
+            "customtypes": ["article"]
           }
         }
       },

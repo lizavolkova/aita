@@ -42,7 +42,8 @@
     @apply font-sans;
   }
 
-  .swiper-full-screen .swiper-button-next, .swiper-full-screen .swiper-button-prev {
+  .swiper-full-screen .swiper-button-next,
+  .swiper-full-screen .swiper-button-prev {
     @apply hidden;
     @apply md:block;
   }

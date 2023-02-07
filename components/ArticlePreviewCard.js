@@ -1,12 +1,12 @@
 import { PrismicText, PrismicLink } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 
-export const ArticlePreviewCard = ({ costume }) => {
-  const { preview_image, title, sub_title } = costume.data;
+export const ArticlePreviewCard = ({ article }) => {
+  const { preview_image, title, sub_title } = article.data;
 
   return (
     <>
-      <PrismicLink href={costume.url}>
+      <PrismicLink href={article.url}>
         <PrismicNextImage
           field={preview_image}
           className="block h-auto w-full"

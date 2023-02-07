@@ -14,7 +14,7 @@ const richTextComponents = {
     </Heading>
   ),
   heading2: ({ children }) => (
-    <Heading as="h3" size="2xl" className="">
+    <Heading as="h3" size="2xl" className="mb-3">
       {children}
     </Heading>
   ),
