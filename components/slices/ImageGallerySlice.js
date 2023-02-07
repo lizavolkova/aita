@@ -5,6 +5,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import Modal from "../../components/Modal";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
+import {ImageLoader} from "../ImageLoader";
 
 /**
  * @typedef {import("@prismicio/client").Content.ImageGallerySlice} ImageGallerySlice
@@ -13,6 +14,13 @@ import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
  */
 const ImageGallerySlice = ({ slice }) => {
   const [showModal, setShowModal] = React.useState(false);
+  const imgixParams = {
+      mark: "https://images.prismic.io/aita/2050ff47-d217-4328-9848-ad1bb87e0e37_adventures-in-time-logo.png?w=500&auto=compress,format",
+      height: 1200,
+      markScale: 25,
+      markAlpha: 50,
+      markAlign: "left",
+  };
 
   return (
     <section>
@@ -40,13 +48,7 @@ const ImageGallerySlice = ({ slice }) => {
                     <PrismicNextImage
                       field={item.image}
                       className="relative h-full max-h-[90vh] w-full max-w-full object-contain xl:max-w-[80vw]"
-                      imgixParams={{
-                        mark: "https://images.prismic.io/aita/2050ff47-d217-4328-9848-ad1bb87e0e37_adventures-in-time-logo.png?w=500&auto=compress,format",
-                        height: 1200,
-                        markScale: 25,
-                        markAlpha: 50,
-                        markAlign: "left",
-                      }}
+                      imgixParams={imgixParams}
                     />
                     {item.caption && (
                       <div className="bottom-0 left-0 z-50 w-full bg-white p-5">
@@ -66,18 +68,12 @@ const ImageGallerySlice = ({ slice }) => {
       >
         {slice.items.map((item) => {
           return (
-            <PrismicNextImage
+            <ImageLoader
               onClick={() => setShowModal(true)}
               key={item.image.id}
-              field={item.image}
-              className="block h-auto w-full p-2"
-              imgixParams={{
-                mark: "https://images.prismic.io/aita/2050ff47-d217-4328-9848-ad1bb87e0e37_adventures-in-time-logo.png?w=500&auto=compress,format",
-                height: 1200,
-                markScale: 25,
-                markAlpha: 50,
-                markAlign: "left",
-              }}
+              img={item.image}
+              classes="block h-auto w-full p-2 cursor-pointer"
+              imgixParams={imgixParams}
             />
           );
         })}
