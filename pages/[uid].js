@@ -49,7 +49,7 @@ export async function getStaticPaths() {
   return {
     paths: pages
       .map((page) => prismicH.asLink(page))
-      .filter((page) => page !== "/costumes"),
+      .filter((page) => page !== "/costumes" && page !== '/articles'),
     fallback: false,
   };
 }

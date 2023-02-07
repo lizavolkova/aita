@@ -65,7 +65,6 @@ const ImageGallerySlice = ({ slice }) => {
         description={slice.primary.description}
       >
         {slice.items.map((item) => {
-          console.log(item.image.url);
           return (
             <PrismicNextImage
               onClick={() => setShowModal(true)}
