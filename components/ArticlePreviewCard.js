@@ -1,16 +1,14 @@
 import { PrismicText, PrismicLink } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
+import {ImageLoader} from "./ImageLoader";
+
 
 export const ArticlePreviewCard = ({ article }) => {
-  const { preview_image, title, sub_title } = article.data;
+    const { preview_image, title, sub_title } = article.data;
 
   return (
     <>
       <PrismicLink href={article.url}>
-        <PrismicNextImage
-          field={preview_image}
-          className="block h-auto w-full"
-        />
+          {preview_image && <ImageLoader img={preview_image} classes="block h-auto w-full "/>}
         <h6 className="text-center">
           <PrismicText field={title} />
         </h6>

@@ -1,10 +1,10 @@
 import * as prismicH from "@prismicio/helpers";
 import { PrismicRichText } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
 import Modal from "../../components/Modal";
 import React from "react";
 
 import { Bounded } from "../../components/Bounded";
+import {ImageLoader} from "../ImageLoader";
 
 const ImageSlice = ({ slice }) => {
   const [showModal, setShowModal] = React.useState(false);
@@ -32,10 +32,10 @@ const ImageSlice = ({ slice }) => {
       >
         {prismicH.isFilled.image(image) && (
           <div className="cursor-pointer bg-gray-100">
-            <PrismicNextImage
-              field={image}
+            <ImageLoader
+              img={image}
               sizes="100vw"
-              className="w-full"
+              classes="w-full"
               onClick={() => setShowModal(true)}
             />
           </div>
