@@ -1,5 +1,4 @@
 import { Layout } from "../../components/Layout";
-import Head from "next/head";
 import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../../prismicio";
 import { components } from "../../slices";
@@ -35,10 +34,8 @@ function Costumes({ page, costumes, navigation, settings, tags }) {
       withHeaderDivider={false}
       navigation={navigation}
       settings={settings}
+      metaTitle={prismicH.asText(settings.data.name)}
     >
-      <Head>
-        <title>{prismicH.asText(settings.data.name)}</title>
-      </Head>
       <div>
         <div className="pb-10 text-center">
           <PrismicRichText field={page.data.title} />

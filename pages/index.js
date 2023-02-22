@@ -1,4 +1,4 @@
-import Head from "next/head";
+
 import { SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 
@@ -13,10 +13,9 @@ const Index = ({ page, navigation, settings }) => {
       navigation={navigation}
       settings={settings}
       fullWidth={true}
+      metaTitle={prismicH.asText(settings.data.name)}
+      metaDescription=""
     >
-      <Head>
-        <title>{prismicH.asText(settings.data.name)}</title>
-      </Head>
       <section>
         <SliceZone slices={page.data.slices} components={components} />
       </section>

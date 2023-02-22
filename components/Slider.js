@@ -53,6 +53,7 @@ export const SliderComponent = ({ items, primary, speed }) => {
           <SwiperSlide key={item.image.url}>
             <div className="relative">
               <PrismicNextImage
+                priority={showhometext}
                 field={item.image}
                 imgixParams={imgixParams}
                 className={`${

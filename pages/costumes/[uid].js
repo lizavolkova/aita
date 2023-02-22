@@ -1,4 +1,3 @@
-import Head from "next/head";
 import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../../prismicio";
 import { Layout } from "../../components/Layout";
@@ -6,15 +5,14 @@ import CostumeDetails from "../../components/CostumeDetails";
 import React from "react";
 
 const Article = ({ costume, navigation, settings }) => {
+  console.log(prismicH.asText(costume.data.title))
   return (
     <Layout
       withHeaderDivider={false}
       navigation={navigation}
       settings={settings}
+      metaTitle={`${prismicH.asText(costume.data.title)} |  ${prismicH.asText(settings.data.name)}`}
     >
-      <Head>
-        <title></title>
-      </Head>
       <CostumeDetails {...costume.data} />
     </Layout>
   );

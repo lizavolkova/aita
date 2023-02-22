@@ -1,5 +1,4 @@
 import { Layout } from "../../components/Layout";
-import Head from "next/head";
 import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../../prismicio";
 import { ArticlePreviewCard } from "../../components/ArticlePreviewCard";
@@ -10,10 +9,8 @@ function Articles({ articles, navigation, settings }) {
       withHeaderDivider={false}
       navigation={navigation}
       settings={settings}
+      metaTitle={prismicH.asText(settings.data.name)}
     >
-      <Head>
-        <title>{prismicH.asText(settings.data.name)}</title>
-      </Head>
       <div>
         <div className="grid grid-cols-2 gap-16">
           {articles.map((article) => {

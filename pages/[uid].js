@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 
@@ -8,13 +7,7 @@ import { Layout } from "../components/Layout";
 
 const Page = ({ page, navigation, settings }) => {
   return (
-    <Layout navigation={navigation} settings={settings}>
-      <Head>
-        <title>
-          {prismicH.asText(page.data.title)} |{" "}
-          {prismicH.asText(settings.data.name)}
-        </title>
-      </Head>
+    <Layout navigation={navigation} settings={settings} metaTitle={`${prismicH.asText(page.data.title)} |  ${prismicH.asText(settings.data.name)}`}>
       <SliceZone slices={page.data.slices} components={components} />
     </Layout>
   );

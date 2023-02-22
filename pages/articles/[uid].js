@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { PrismicText, SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../../prismicio";
@@ -16,20 +15,34 @@ const Article = ({ article, navigation, settings }) => {
   const date = prismicH.asDate(
     article.data.publishDate || article.first_publication_date
   );
-  console.log(article);
+
+  /** @type {import('schema-dts').Article} */
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: prismicH.asText(article.data.title),
+    author: {
+      '@type': 'Person',
+      name: 'Liza Volkova'
+    },
+    image: [
+      prismicH.asImageSrc(article.data.meta_image_1x1),
+      prismicH.asImageSrc(article.data.meta_image_4x3),
+      prismicH.asImageSrc(article.data.meta_image_16x9)
+    ],
+    description: prismicH.asText(article.data.meta_description),
+    datePublished: article.data.publication_date,
+    dateModified: article.last_publication_date,
+  }
 
   return (
     <Layout
       withHeaderDivider={false}
       navigation={navigation}
       settings={settings}
+      metaTitle={`${prismicH.asText(article.data.title)} |  ${prismicH.asText(settings.data.name)}`}
+      schema={schema}
     >
-      <Head>
-        <title>
-          {prismicH.asText(article.data.title)} |{" "}
-          {prismicH.asText(settings.data.name)}
-        </title>
-      </Head>
       <article>
         <h2>
           <PrismicText field={article.data.title} />
@@ -57,6 +70,7 @@ export async function getStaticProps({ params, previewData }) {
 
   const article = await client.getByUID("article", params.uid);
   const latestArticles = await client.getAllByType("article", {
+    fetchLinks: 'article.author',
     limit: 3,
     orderings: [
       { field: "my.article.publishDate", direction: "desc" },
