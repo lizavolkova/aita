@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PrismicLink, PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
-
+import Script from 'next/script'
 import { repositoryName } from "../prismicio";
 import { Heading } from "../components/Heading";
 
@@ -61,6 +61,19 @@ export default function App({ Component, pageProps }) {
       richTextComponents={richTextComponents}
     >
       <PrismicPreview repositoryName={repositoryName}>
+
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-EBX3E890YM"></Script>
+        <Script id="google-analytics" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-EBX3E890YM');`
+        }}>
+
+        </Script>
+
         <Component {...pageProps} />
       </PrismicPreview>
     </PrismicProvider>
