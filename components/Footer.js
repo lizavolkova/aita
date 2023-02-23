@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 export const Footer = () => {
   return (
 
@@ -11,7 +9,7 @@ export const Footer = () => {
 
             <div className="flex mx-auto md:mx-0">
 
-                <a href="https://www.instagram.com/adventures.in.time" target="_blank" className="group ">
+                <a href="https://www.instagram.com/adventures.in.time" target="_blank" className="group"  rel="noreferrer">
                     <div className="w-6 m-2 self-center">
                         <svg className="transition-opacity duration-200 md:opacity-40 group-hover:opacity-100" version="1.1" viewBox="0 0 600 600" width="100%" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsSerif="http://www.serif.com/" xmlnsLink="http://www.w3.org/1999/xlink">
                             <g transform="matrix(1.01619,0,0,1.01619,44,43.8384)">
@@ -22,7 +20,7 @@ export const Footer = () => {
                     </div>
                 </a>
 
-                <a href="https://www.facebook.com/adventuresintimeart" target="_blank" className="group ">
+                <a href="https://www.facebook.com/adventuresintimeart" target="_blank" className="group"  rel="noreferrer">
                     <div className="w-5 m-2 self-center">
                         <svg className="transition-opacity duration-200 md:opacity-40 group-hover:opacity-100" height="100%" version="1.1" viewBox="0 0 512 512" width="100%" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsSerif="http://www.serif.com/" xmlnsXlink="http://www.w3.org/1999/xlink">
                             <path d="M374.244,285.825l14.105,-91.961l-88.233,0l0,-59.677c0,-25.159 12.325,-49.682 51.845,-49.682l40.116,0l0,-78.291c0,0 -36.407,-6.214 -71.213,-6.214c-72.67,0 -120.165,44.042 -120.165,123.775l0,70.089l-80.777,0l0,91.961l80.777,0l0,222.31c16.197,2.541 32.798,3.865 49.709,3.865c16.911,0 33.511,-1.324 49.708,-3.865l0,-222.31l74.128,0Z" />
@@ -30,7 +28,7 @@ export const Footer = () => {
                     </div>
                 </a>
 
-                <a href="https://www.tiktok.com/@adventures.in.time" target="_blank" className="group ">
+                <a href="https://www.tiktok.com/@adventures.in.time" target="_blank" className="group"  rel="noreferrer">
                     <div className="w-8 my-1 self-center">
                         <svg className="transition-opacity duration-200 md:opacity-40 group-hover:opacity-100" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                             <g id="TikTok"><path d="M20.69,8h4a4.94,4.94,0,0,1,.1.53,5.61,5.61,0,0,0,5.55,5.12v3.77a1.66,1.66,0,0,1-.58.08A20.28,20.28,0,0,1,27,17a18.55,18.55,0,0,1-2.28-1.06v.5c0,2,0,4.06,0,6.09A16.13,16.13,0,0,1,24.56,25a8.06,8.06,0,0,1-4.68,6.32,17.26,17.26,0,0,1-2.26.66H16.23a1.34,1.34,0,0,0-.18-.07,7.14,7.14,0,0,1-6-5.25,13.66,13.66,0,0,1-.38-1.82V23.67c.11-.55.19-1.1.35-1.64a7.59,7.59,0,0,1,6.62-5.3c.45-.07.9-.09,1.38-.13,0,1.3,0,2.5,0,3.71,0,.29-.15.33-.39.4a15.46,15.46,0,0,0-2.25.7,2.92,2.92,0,0,0-1.89,2.78,3.48,3.48,0,0,0,1.92,3.33,3.31,3.31,0,0,0,3.69-.14,3.5,3.5,0,0,0,1.44-2.45,21.6,21.6,0,0,0,.15-3q0-6.66,0-13.33C20.72,8.39,20.7,8.2,20.69,8Z"/>

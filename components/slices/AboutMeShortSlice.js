@@ -11,14 +11,13 @@ import { HomeSection } from "../HomeSection";
 const AboutMeShortSlice = ({ slice }) => (
   <HomeSection title={slice.primary.title}>
     <div
-      className="flex w-full justify-center px-5 pt-5
-      md:pt-20 "
+      className="flex w-full justify-center px-5 pt-5"
     >
       <div className="grid w-full grid-cols-3 gap-4 md:w-1/2">
         <div className="flex justify-end ">
           <PrismicNextImage
             field={slice.primary.photo}
-            className="block h-[100px] w-[100px] rounded-full object-cover md:h-auto md:w-56 md:object-fill"
+            className="block h-[90px] w-[90px] rounded-full object-cover self-center md:self-start lg:h-auto lg:w-56 lg:object-fill"
           />
         </div>
         <div className="col-span-2 flex flex-col justify-center">

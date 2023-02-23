@@ -4,7 +4,7 @@ import { PrismicRichText } from "@prismicio/react";
 export const HomeSection = ({ children, title, bgColor, fullWidth }) => (
   <section
     className={`${bgColor} ${
-      fullWidth ? "" : "container mx-auto pb-10 md:pb-20"
+      fullWidth ? "" : "container mx-auto pb-10 md:pb-10"
     } py-5 md:py-10`}
   >
     {title?.length > 0 && (
