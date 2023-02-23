@@ -4,15 +4,20 @@ import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../prismicio";
 import { components } from "../slices";
 import { Layout } from "../components/Layout";
+import React from "react";
+import {pageSchema} from "../utils/schemas/page";
 
 const Page = ({ page, navigation, settings }) => {
+  const schema = pageSchema(page);
+
   return (
     <Layout
       navigation={navigation}
       settings={settings}
-      metaTitle={`${prismicH.asText(page.data.title)} |  ${prismicH.asText(
-        settings.data.name
-      )}`}
+      metaTitle={prismicH.asText(page.data.meta_title)}
+      metaDescription={prismicH.asText(page.data.meta_description)}
+      metaImage={prismicH.asImageSrc(page.data.meta_image_16x9)}
+      schema={schema}
     >
       <SliceZone slices={page.data.slices} components={components} />
     </Layout>

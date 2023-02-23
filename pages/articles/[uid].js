@@ -43,7 +43,7 @@ const Article = ({ article, navigation, settings }) => {
         </p>
         <PrismicNextImage
           field={article.data.preview_image}
-          className="mb-10 block h-auto max-h-[300px] w-full object-cover object-top"
+          className="mb-10 block h-auto max-h-[370px] w-full object-cover object-top"
         />
         <SliceZone slices={article.data.slices} components={components} />
       </article>
