@@ -4,7 +4,7 @@ import Modal from "../../components/Modal";
 import React from "react";
 
 import { Bounded } from "../../components/Bounded";
-import {ImageLoader} from "../ImageLoader";
+import { ImageLoader } from "../ImageLoader";
 
 const ImageSlice = ({ slice }) => {
   const [showModal, setShowModal] = React.useState(false);
@@ -36,6 +36,7 @@ const ImageSlice = ({ slice }) => {
               img={image}
               sizes="100vw"
               classes="w-full"
+              alt={image.alt}
               onClick={() => setShowModal(true)}
             />
           </div>

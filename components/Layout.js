@@ -10,20 +10,30 @@ export const Layout = ({
   withSignUpForm,
   children,
   fullWidth,
-    metaTitle,
-    metaDescription,
-    schema
+  metaTitle,
+  metaDescription,
+  metaImage,
+  schema,
+  type,
 }) => {
   return (
     <div>
-        <Head>
-            <title>{metaTitle}</title>
-            {metaDescription && <meta name="description" content={metaDescription} />}
-            {schema && <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-            />}
-        </Head>
+      <Head>
+        <title>{metaTitle}</title>
+        {metaDescription && (
+          <meta name="description" content={metaDescription} />
+        )}
+        {schema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        )}
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:image" content={metaImage} />
+        <meta property="og:type" content={type ? type : "website"} />
+      </Head>
       <Header
         withLogo={withLogo}
         withDivider={withHeaderDivider}
@@ -35,8 +45,7 @@ export const Layout = ({
           fullWidth ? "" : "max-w-[1300px]"
         } mx-auto mt-28 text-slate-700`}
       >
-        <main className="p-2">{children}
-        </main>
+        <main className="p-2">{children}</main>
         <Footer withSignUpForm={withSignUpForm} settings={settings} />
       </div>
     </div>

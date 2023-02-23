@@ -23,7 +23,7 @@ export const Header = ({ navigation, settings }) => {
         </div>
 
         <div
-          className="block lg:hidden absolute right-0"
+          className="absolute right-0 block lg:hidden"
           onClick={() => setShowMobileNav(!showMobileNav)}
         >
           <button

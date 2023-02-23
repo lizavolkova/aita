@@ -3,15 +3,23 @@ import { createClient } from "../../prismicio";
 import { Layout } from "../../components/Layout";
 import CostumeDetails from "../../components/CostumeDetails";
 import React from "react";
+import { articleSchema } from "../../utils/schemas/article";
 
 const Article = ({ costume, navigation, settings }) => {
-  console.log(prismicH.asText(costume.data.title))
+  const schema = articleSchema(costume);
+  console.log(schema);
+
   return (
     <Layout
       withHeaderDivider={false}
       navigation={navigation}
       settings={settings}
-      metaTitle={`${prismicH.asText(costume.data.title)} |  ${prismicH.asText(settings.data.name)}`}
+      metaTitle={`${prismicH.asText(costume.data.title)} |  ${prismicH.asText(
+        settings.data.name
+      )}`}
+      metaDescription={prismicH.asText(costume.data.meta_description)}
+      metaImage={prismicH.asImageSrc(costume.data.meta_image_16x9)}
+      schema={schema}
     >
       <CostumeDetails {...costume.data} />
     </Layout>

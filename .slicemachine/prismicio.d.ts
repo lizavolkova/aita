@@ -246,6 +246,61 @@ interface CostumeDocumentData {
      *
      */
     slices: prismicT.SliceZone<CostumeDocumentDataSlicesSlice>;
+    /**
+     * Meta Title field in *Costume*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: costume.meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_title: prismicT.RichTextField;
+    /**
+     * Meta Description field in *Costume*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: costume.meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_description: prismicT.RichTextField;
+    /**
+     * Meta Image 1x1 field in *Costume*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: costume.meta_image_1x1
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    meta_image_1x1: prismicT.ImageField<never>;
+    /**
+     * Meta Image 4x3 field in *Costume*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: costume.meta_image_4x3
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    meta_image_4x3: prismicT.ImageField<never>;
+    /**
+     * Meta Image 16x9 field in *Costume*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: costume.meta_image_16x9
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    meta_image_16x9: prismicT.ImageField<never>;
 }
 /**
  * Slice for *Costume → Slice Zone*
@@ -347,6 +402,61 @@ interface PageDocumentData {
      *
      */
     slices: prismicT.SliceZone<PageDocumentDataSlicesSlice>;
+    /**
+     * Meta Title field in *Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_title: prismicT.RichTextField;
+    /**
+     * Meta Description field in *Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_description: prismicT.RichTextField;
+    /**
+     * Meta Image 1x1 field in *Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.meta_image_1x1
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    meta_image_1x1: prismicT.ImageField<never>;
+    /**
+     * Meta Image 4x3 field in *Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.meta_image_4x3
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    meta_image_4x3: prismicT.ImageField<never>;
+    /**
+     * Meta Image 16x9 field in *Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.meta_image_16x9
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    meta_image_16x9: prismicT.ImageField<never>;
 }
 /**
  * Slice for *Page → Slice Zone*
@@ -363,6 +473,30 @@ type PageDocumentDataSlicesSlice = ImageSlice | QuoteSlice | TextSlice | Contact
  * @typeParam Lang - Language API ID of the document.
  */
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+/** Content for SEOData documents */
+interface SeodataDocumentData {
+    /**
+     * Meta Title field in *SEOData*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: seodata.meta_title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_title: prismicT.RichTextField;
+}
+/**
+ * SEOData document from Prismic
+ *
+ * - **API ID**: `seodata`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SeodataDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SeodataDocumentData>, "seodata", Lang>;
 /** Content for Settings documents */
 interface SettingsDocumentData {
     /**
@@ -398,7 +532,7 @@ interface SettingsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
-export type AllDocumentTypes = ArticleDocument | CostumeDocument | NavigationDocument | PageDocument | SettingsDocument;
+export type AllDocumentTypes = ArticleDocument | CostumeDocument | NavigationDocument | PageDocument | SeodataDocument | SettingsDocument;
 /**
  * Primary content in AboutMeShort → Primary
  *
@@ -1198,6 +1332,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArticleDocumentData, ArticleDocumentDataSlicesSlice, ArticleDocument, CostumeDocumentData, CostumeDocumentDataSlicesSlice, CostumeDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, AboutMeShortSliceDefaultPrimary, AboutMeShortSliceDefault, AboutMeShortSliceVariation, AboutMeShortSlice, ArticlePreviewSliceDefaultPrimary, ArticlePreviewSliceDefaultItem, ArticlePreviewSliceDefault, ArticlePreviewSliceVariation, ArticlePreviewSlice, ContactFormSliceDefault, ContactFormSliceVariation, ContactFormSlice, HeadingWithTextSliceDefaultPrimary, HeadingWithTextSliceDefault, HeadingWithTextSliceVariation, HeadingWithTextSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceWidePrimary, ImageSliceWide, ImageSliceVariation, ImageSlice, ImageGallerySliceDefaultPrimary, ImageGallerySliceDefaultItem, ImageGallerySliceDefault, ImageGallerySliceVariation, ImageGallerySlice, InstagramFeedSliceDefaultPrimary, InstagramFeedSliceDefault, InstagramFeedSliceVariation, InstagramFeedSlice, QuoteSliceDefaultPrimary, QuoteSliceDefault, QuoteSliceVariation, QuoteSlice, SliderSliceDefaultPrimary, SliderSliceDefaultItem, SliderSliceDefault, SliderSliceWithDescriptionPrimary, SliderSliceWithDescriptionItem, SliderSliceWithDescription, SliderSliceVariation, SliderSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceHeadingWithTextPrimary, TextSliceHeadingWithText, TextSliceVariation, TextSlice };
+        export type { ArticleDocumentData, ArticleDocumentDataSlicesSlice, ArticleDocument, CostumeDocumentData, CostumeDocumentDataSlicesSlice, CostumeDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SeodataDocumentData, SeodataDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, AboutMeShortSliceDefaultPrimary, AboutMeShortSliceDefault, AboutMeShortSliceVariation, AboutMeShortSlice, ArticlePreviewSliceDefaultPrimary, ArticlePreviewSliceDefaultItem, ArticlePreviewSliceDefault, ArticlePreviewSliceVariation, ArticlePreviewSlice, ContactFormSliceDefault, ContactFormSliceVariation, ContactFormSlice, HeadingWithTextSliceDefaultPrimary, HeadingWithTextSliceDefault, HeadingWithTextSliceVariation, HeadingWithTextSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceWidePrimary, ImageSliceWide, ImageSliceVariation, ImageSlice, ImageGallerySliceDefaultPrimary, ImageGallerySliceDefaultItem, ImageGallerySliceDefault, ImageGallerySliceVariation, ImageGallerySlice, InstagramFeedSliceDefaultPrimary, InstagramFeedSliceDefault, InstagramFeedSliceVariation, InstagramFeedSlice, QuoteSliceDefaultPrimary, QuoteSliceDefault, QuoteSliceVariation, QuoteSlice, SliderSliceDefaultPrimary, SliderSliceDefaultItem, SliderSliceDefault, SliderSliceWithDescriptionPrimary, SliderSliceWithDescriptionItem, SliderSliceWithDescription, SliderSliceVariation, SliderSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceHeadingWithTextPrimary, TextSliceHeadingWithText, TextSliceVariation, TextSlice };
     }
 }

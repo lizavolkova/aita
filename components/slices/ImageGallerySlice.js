@@ -5,7 +5,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import Modal from "../../components/Modal";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
-import {ImageLoader} from "../ImageLoader";
+import { ImageLoader } from "../ImageLoader";
 
 /**
  * @typedef {import("@prismicio/client").Content.ImageGallerySlice} ImageGallerySlice
@@ -15,11 +15,11 @@ import {ImageLoader} from "../ImageLoader";
 const ImageGallerySlice = ({ slice }) => {
   const [showModal, setShowModal] = React.useState(false);
   const imgixParams = {
-      mark: "https://images.prismic.io/aita/2050ff47-d217-4328-9848-ad1bb87e0e37_adventures-in-time-logo.png?w=500&auto=compress,format",
-      height: 1200,
-      markScale: 25,
-      markAlpha: 50,
-      markAlign: "left",
+    mark: "https://images.prismic.io/aita/2050ff47-d217-4328-9848-ad1bb87e0e37_adventures-in-time-logo.png?w=500&auto=compress,format",
+    height: 1200,
+    markScale: 25,
+    markAlpha: 50,
+    markAlign: "left",
   };
 
   return (
@@ -43,7 +43,7 @@ const ImageGallerySlice = ({ slice }) => {
           >
             {slice.items.map((item) => {
               return (
-                <SwiperSlide key={item.image.id}>
+                <SwiperSlide key={item.image.url}>
                   <div className="flex flex-col items-center">
                     <PrismicNextImage
                       field={item.image}
@@ -70,7 +70,7 @@ const ImageGallerySlice = ({ slice }) => {
           return (
             <ImageLoader
               onClick={() => setShowModal(true)}
-              key={item.image.id}
+              key={item.image.url}
               img={item.image}
               classes="block h-auto w-full p-2 cursor-pointer"
               imgixParams={imgixParams}

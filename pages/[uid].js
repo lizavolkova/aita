@@ -7,7 +7,13 @@ import { Layout } from "../components/Layout";
 
 const Page = ({ page, navigation, settings }) => {
   return (
-    <Layout navigation={navigation} settings={settings} metaTitle={`${prismicH.asText(page.data.title)} |  ${prismicH.asText(settings.data.name)}`}>
+    <Layout
+      navigation={navigation}
+      settings={settings}
+      metaTitle={`${prismicH.asText(page.data.title)} |  ${prismicH.asText(
+        settings.data.name
+      )}`}
+    >
       <SliceZone slices={page.data.slices} components={components} />
     </Layout>
   );
@@ -42,7 +48,7 @@ export async function getStaticPaths() {
   return {
     paths: pages
       .map((page) => prismicH.asLink(page))
-      .filter((page) => page !== "/costumes" && page !== '/articles'),
+      .filter((page) => page !== "/costumes" && page !== "/articles"),
     fallback: false,
   };
 }

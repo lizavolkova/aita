@@ -7,10 +7,14 @@
     overflow-y: scroll;
   }
   h1 {
-    @apply text-2xl;
-  }
-  h2 {
     @apply text-4xl;
+    @apply uppercase;
+    @apply leading-normal;
+    @apply font-serif;
+  }
+
+  h2 {
+    @apply text-2xl;
     @apply uppercase;
     @apply leading-normal;
     @apply font-serif;

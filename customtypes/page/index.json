@@ -53,6 +53,59 @@
           }
         }
       }
+    },
+    "SEO": {
+      "meta_title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "meta_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "meta_image_1x1": {
+        "type": "Image",
+        "config": {
+          "label": "Meta Image 1x1",
+          "constraint": {
+            "width": 1000,
+            "height": 1000
+          },
+          "thumbnails": []
+        }
+      },
+      "meta_image_4x3": {
+        "type": "Image",
+        "config": {
+          "label": "Meta Image 4x3",
+          "constraint": {
+            "width": 1000,
+            "height": 750
+          },
+          "thumbnails": []
+        }
+      },
+      "meta_image_16x9": {
+        "type": "Image",
+        "config": {
+          "label": "Meta Image 16x9",
+          "constraint": {
+            "width": 1920,
+            "height": 1080
+          },
+          "thumbnails": []
+        }
+      }
     }
   }
 }
