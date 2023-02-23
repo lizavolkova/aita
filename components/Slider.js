@@ -68,9 +68,9 @@ export const SliderComponent = ({ items, primary, speed }) => {
               {showhometext && (
                 <div className="absolute left-0 right-0 top-1/2 mx-auto flex w-full -translate-y-1/2 flex-col text-center text-white md:w-3/4">
                   <p>Hi, my name is Liza!</p>
-                  <span className="py-2 font-serif text-2xl uppercase md:py-6 md:text-6xl">
-                    This is Adventures In Time
-                  </span>
+                  <h1 className="py-2 font-serif text-2xl uppercase md:py-6 md:text-6xl">
+                    This is Adventures In Time Art
+                  </h1>
                   <h4 className="text-lg md:text-2xl">
                     A place to showcase my work
                   </h4>

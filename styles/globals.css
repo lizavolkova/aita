@@ -44,6 +44,8 @@
 
   p {
     @apply font-sans;
+    @apply text-sm;
+    @apply md:text-base;
   }
 
   .swiper-full-screen .swiper-button-next,
