@@ -23,12 +23,10 @@ export const Header = ({ navigation, settings }) => {
         </div>
 
         <div
-          className="absolute right-0 block lg:hidden"
+          className="absolute right-0 top-6 block lg:hidden"
           onClick={() => setShowMobileNav(!showMobileNav)}
         >
-          <button
-            id="nav-toggle"
-            className="flex items-center px-3 py-2 text-black"
+          <button id="nav-toggle" className="flex items-center px-3 py-2 text-black"
           >
             <svg
               className="h-7 w-7 fill-current"

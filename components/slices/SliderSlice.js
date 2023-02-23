@@ -26,7 +26,7 @@ const SliderSlice = ({ slice }) => {
   return (
     <section>
       {slice.variation === "withDescription" ? (
-        <div className={`flex ${parentClass(text_placement)}`}>
+        <div className={`flex flex-col-reverse md:${parentClass(text_placement)}`}>
           <div
             className={`${
               text_placement === "Right" || text_placement === "Left"
@@ -39,7 +39,7 @@ const SliderSlice = ({ slice }) => {
           <div
             className={`${
               text_placement === "Right" || text_placement === "Left"
-                ? "md-py-0 w-full py-5 md:w-1/2 md:px-5"
+                ? "md-py-0 w-full my-0 md:w-1/2 md:px-5"
                 : "w-full py-5"
             }`}
           >
